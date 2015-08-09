@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture>
+	<name>laptop</name>
+	<filename>laptop_tex.png</filename>
+	<!-- eventually this will be diffuse/specular/normal etc -->
+</texture>

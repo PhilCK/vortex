@@ -1,0 +1,127 @@
+
+Text Shader
+-----------
+
+
+[VERTEXSHADER]
+
+#version 150 core
+
+// Vertex Format
+in vec3 inPosition;
+in vec2 inTexC;
+in vec3 inNormal;
+
+// WVP matrix.
+uniform mat4 worldMat;
+uniform mat4 viewMat;
+uniform mat4 projMat;
+
+// Output
+out VertexData {
+	vec4 position;
+	mat4 wvpMat;
+} vertexOut;
+
+void main()
+{
+	// Pass info to the geo shader.
+	vertexOut.wvpMat 	= projMat * viewMat * worldMat; // Prolly do this once on the CPU instead.
+	vertexOut.position 	= vec4(inPosition, 1.0);
+}
+
+[/VERTEXSHADER]
+
+
+
+[GEOMETRYSHADER]
+
+#version 150
+
+layout (points) in;
+layout (triangle_strip, max_vertices = 4) out;
+
+// Input
+in VertexData {
+	vec4 position;
+	mat4 wvpMat;
+} vertexIn[];
+
+// Uniforms
+uniform vec2  uniFontScale = vec2(1.0, 1.0);
+uniform vec2  uniFontMapSize;
+uniform vec2  uniCharacterSize;
+uniform vec2  uniCharacterStart;
+uniform vec2  uniMaxScale = vec2(1.0, 1.0);
+uniform float uniXAdvance; // Could be in vert shader and applied to inPos.
+uniform float uniYAdvance; // Could be in vert shader and applied to inPos.
+uniform vec2  uniOffset = vec2(0.0, 0.0);
+
+// Output
+out vec2 texC;
+
+void main()
+{
+	// Generate the billboard.
+	for(int i = 0; i < 4; i++)
+	{
+		// Some details to help generate points etc
+		float row = floor(i / 2.0);
+		float col = mod(i, 2.0);
+
+		// Scale the width / height based on maxScale (Largest Character).
+		float xScale = uniCharacterSize.x / uniMaxScale.x;
+		float yScale = uniCharacterSize.y / uniMaxScale.y;
+		float xAdvance = uniXAdvance / uniMaxScale.x;
+		float yAdvance = uniYAdvance / uniMaxScale.y;
+		float xOffset = uniOffset.x / uniMaxScale.x;
+		float yOffset = uniOffset.y / uniMaxScale.y;
+		
+		float x = ((1 * row) * xScale) + xAdvance + xOffset;
+		float y = ((-1 * col) * yScale) - yAdvance - yOffset;
+
+		vec2 pos = vec2(x, y);
+		pos = pos * uniFontScale;
+
+		// Set the position
+		gl_Position = vertexIn[0].position + vec4(pos, 0.0, 1.0);
+		gl_Position = vertexIn[0].wvpMat * gl_Position;
+
+		// Set the u,v
+		float u = (uniCharacterStart.x / uniFontMapSize.x) + ((uniCharacterSize.x / uniFontMapSize.x) * row);
+		float v = (uniCharacterStart.y / uniFontMapSize.y) + ((uniCharacterSize.y / uniFontMapSize.y) * col);
+
+		texC = vec2(u, v);
+
+		EmitVertex();
+	}
+
+	EndPrimitive();
+}
+
+[/GEOMETRYSHADER]
+
+
+
+[PIXELSHADER]
+
+#version 150
+
+// Input
+in vec2 texC;
+
+// Uniforms
+uniform sampler2D uniFontMap;
+uniform vec4  	  uniFontColor 	= vec4(1, 1, 1, 1);
+
+// Output
+out vec4 outColor;
+
+void main()
+{
+	vec4 characterTexture = texture(uniFontMap, texC);
+	outColor = mix(characterTexture, uniFontColor, uniFontColor.w);
+	outColor.w = uniFontColor.w * characterTexture.w;
+}
+
+[/PIXELSHADER]

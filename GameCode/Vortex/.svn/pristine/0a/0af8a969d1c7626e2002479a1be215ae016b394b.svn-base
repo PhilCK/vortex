@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Player -->
+
+<entity>
+	
+	<name>GameController</name>
+	<tags>game</tags>
+
+	<components>
+				
+		<component>
+			<name>GameController</name>
+			<params>
+			</params>
+		</component>
+
+		<component>
+			<name>GameModel</name>
+			<params>
+			</params>
+		</component>		
+
+	</components>
+		
+</entity>

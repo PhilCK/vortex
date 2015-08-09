@@ -1,0 +1,11 @@
+
+class PlayerView : GameComponent
+{
+	PlayerModel@ model; // Can this be consted
+
+	void onStart()
+	{
+		// Find Model
+		
+	}
+};

@@ -1,0 +1,101 @@
+/*
+	Head Hack Games
+	--
+	www.headhackgames.com
+	info@headhackgames.com
+	--
+	All rights reserved 2014.
+*/
+
+/*
+	FreeCamera
+	--
+	This is a simple debug camera.
+*/
+
+//[RegisteredEvents ["FreeCamMakeActive"]]
+class FreeCamera : GameComponent
+{
+	CameraComponent @camera;
+
+	void onStart()
+	{
+		if(getOwner() !is null)
+		{
+			// Add camera component.
+			if(getOwner().addComponent("CameraComponent"))
+			{
+				@camera = cast<CameraComponent>(getOwner().getComponent("CameraComponent"));
+
+				if(camera !is null)
+				{
+					camera.makeActiveCamera();
+				}
+			}
+			else
+			{
+				Print("Failed to add camera!");
+			}
+		}
+		else
+		{
+			Print("FreeCamera component has no entity! EEEK!");
+		}
+	}
+
+
+	void onEarlyThink(const float dt)
+	{
+		if(camera.isActive())
+		{
+			Input@ input = getOwner().getInput();
+
+			if(input !is null)
+			{
+				// WASD keys.
+				if(input.isDown(1))
+				{
+
+				}
+				if(input.isDown(2))
+				{
+
+				}
+				if(input.isDown(3))
+				{
+
+				}
+				if(input.isDown(4))
+				{
+
+				}
+
+				// Rotations
+				// Do rots
+			}
+		}
+	}
+
+
+	bool onEvent(int someData)
+	{
+		//if(someData is EVENT_ID("FreeCamMakeActive"))
+		{
+			if(camera)
+			{
+				camera.makeActiveCamera();
+
+				Input@ input = getOwner().getInput();
+
+				if(input)
+				{
+					input.setHoldMouse(true);
+				}
+			}
+		}
+
+		//return EVENT_NO_SWALLOW;
+		return false;
+	}
+
+};

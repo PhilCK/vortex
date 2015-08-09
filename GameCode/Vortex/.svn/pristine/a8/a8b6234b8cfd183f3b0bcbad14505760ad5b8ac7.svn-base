@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- TestGame -->
+
+<state>
+	
+	<name>TestGame</name>
+	<track_state>true</track_state>
+
+	<systems>
+		<entities>
+			<size_hint>256</size_hint>
+		</entities>
+
+		<events>
+			<event_hint>256</event_hint>
+		</events>
+
+		<physics>
+			<gravity>10.0</gravity>
+		</physics>
+	</systems>
+
+	<on_start>
+		<event>
+			<type>instant</type>
+			<id>CreateEntity</id>
+			<params>
+				<string_arg>MenuController</string_arg>
+			</params>
+		</event>
+
+		<event>
+			<type>instant</type>
+			<id>CreateEntity</id>
+			<params>
+				<string_arg>Player</string_arg>
+			</params>
+		</event>
+
+		<event>
+			<type>instant</type>
+			<id>CreateEntity</id>
+			<params>
+				<string_arg>Ground</string_arg>
+			</params>
+		</event>
+
+		<event>
+			<type>instant</type>
+			<id>CreateEntity</id>
+			<params>
+				<string_arg>FreeCamera</string_arg>
+			</params>
+		</event>
+
+		<event>
+			<type>instant</type>
+			<id>CreateEntity</id>
+			<params>
+				<string_arg>DebugController</string_arg>
+			</params>
+		</event>
+
+		<event>
+			<type>instant</type>
+			<id>ForceFrameTick</id>
+			<params>
+				<float_arg>0.1</float_arg>
+			</params>
+		</event>
+	</on_start>
+
+</state>

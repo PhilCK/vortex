@@ -1,0 +1,21 @@
+
+class GameController : GameComponent
+{
+
+	private void onThink(const float dt) override
+	{
+		m_timer += dt;
+
+		if(m_timer > 1.0f)
+		{
+			getOwner().getState().pushNewEntity("EnemyShip");
+
+			m_timer = 0;
+		}
+	}
+
+
+
+	private float 		m_timer 		= 0.f;
+
+};

@@ -1,0 +1,21 @@
+#
+#	Player Entity Description
+#	This is the players physical body (not the camera).
+#
+entity:
+	name: Player
+	tags: player
+
+	components:
+		- name: Transform
+		- name: Rigidbody
+		- name: PlayerModel # Can this be a generic actor model?
+			params:
+				move_accel: 23
+				move_max_speed: 40
+				jump_accel: 20
+				run_multiplier: 2
+				start_health: 100
+				god_mode: false
+		- name: PlayerView  # Can this be a generic actor view?
+		- name: PlayerController

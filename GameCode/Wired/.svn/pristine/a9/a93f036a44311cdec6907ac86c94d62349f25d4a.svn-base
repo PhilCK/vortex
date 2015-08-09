@@ -1,0 +1,18 @@
+#
+#	Ground Entity Description
+# 	A debug ground for testing in pre-alpha.
+#
+entity:
+	name: Ground
+	tags: debug camera
+
+	components:
+		- name: Transform
+		- name: Rigidbody
+		- name: GroundModel
+			params:
+				ground_size: 10
+		- name: GroundView
+			params:
+				texture_name: dev_orange_grid
+				shader_name: fullbright

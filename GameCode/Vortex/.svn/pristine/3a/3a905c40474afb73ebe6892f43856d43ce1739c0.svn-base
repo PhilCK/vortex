@@ -1,0 +1,126 @@
+
+class ShipView : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_shaderParam 	= params["shader_name"].asString(m_shaderParam);
+		m_textureParam 	= params["texture_name"].asString(m_textureParam);
+		m_modelParam    = params["model_name"].asString(m_modelParam);
+	}
+
+
+
+	private void onStart() override
+	{
+		Vec2 foo = {1.2f, 3.4f};
+
+		// Load shader
+		{
+			m_shaderID = getOwner().getRenderer().addShader(m_shaderParam);
+
+			if(m_shaderID == 0)
+			{
+				Print("Couldn't load shader");
+			}
+		}
+
+		// Load Vert fmt
+		{
+			array<FormatDesc> vertFmt = {
+				{"inPosition", 	AttrFormat::FLOAT, 3},
+				{"inTexC", 		AttrFormat::FLOAT, 2},
+				{"inNormal",	AttrFormat::FLOAT, 3}
+			};
+
+			m_vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+			if(m_vertexFmtID == 0)
+			{
+				Print("Couldn't load vertex format");
+			}
+		}
+
+		// Verts
+		{
+			array<float> verts = {
+				-10.0f,  0.f, -10.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+				 10.0f,  0.f, -10.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+				 10.0f, 0.f, 10.0f,   1.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+
+				-10.0f,  0.f, -10.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+				 10.0f, 0.f, 10.0f, 	1.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+				-10.0f, 0.f, 10.0f, 	0.0f, 1.0f, 0.0f, 1.0f, 0.0f					
+			};
+
+			m_vertexBufferID = getOwner().getRenderer().addVertexBuffer(verts);
+
+			if(m_vertexBufferID == 0)
+			{
+				Print("Couldn't load vertices!");
+			}
+		}
+
+		// Get model
+		{
+			//getOwner().getModelManager().getModelData(m_modelParam);
+		}
+
+		// Texture
+		{
+			m_textureID = getOwner().getRenderer().addTexture(m_textureParam);
+
+			if(m_textureID == 0)
+			{
+				Print("Couldn't load texture!");
+			}
+		}	
+	}
+
+
+
+	private void onRender() override
+	{
+		Renderer 		@renderer = getOwner().getRenderer();
+		CameraComponent @camera   = getOwner().getCameraManager().getCurrentCamera();
+
+		Mat4 world = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1};
+		Vec2 scale = {5, 5};
+
+		if(renderer !is null && camera !is null)
+		{
+			renderer.reset();
+			renderer.setShader(m_shaderID);
+			renderer.setVertexFormat(m_vertexFmtID);
+			renderer.setVertexBuffer(m_vertexBufferID);
+
+			renderer.setTexture("diffuseTex", m_textureID);
+			renderer.setShader2f("texScale", scale);
+			renderer.setShaderMatrix44f("worldMat", world);
+			renderer.setShaderMatrix44f("viewMat", camera.getViewMatrix());
+			renderer.setShaderMatrix44f("projMat", camera.getProjMatrix());
+
+			renderer.apply();
+
+			renderer.drawArray(Primitive::TRIANGLES, 0, 6);
+		}
+		else
+		{
+			Print("Failed to get renderer or camera");
+		}		
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 		m_shaderID 			= 0;
+	private uint 		m_vertexFmtID 		= 0;
+	private uint 		m_vertexBufferID 	= 0;
+	private uint 		m_textureID 		= 0;
+
+	private string 		m_shaderParam 		= "FullBright.shd";
+	private string 		m_textureParam 		= "dev_grid_orange.png";
+	private string 		m_modelParam 		= "plane.obj";
+};

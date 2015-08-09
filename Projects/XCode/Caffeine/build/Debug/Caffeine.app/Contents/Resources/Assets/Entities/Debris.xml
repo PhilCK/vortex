@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+
+	<name>Debris</name>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Physics</name>
+		</component>
+
+		<!-- MVC Components -->
+
+		<component>
+			<name>DebrisModel</name>
+		</component>
+
+		<component>
+			<name>DebrisView</name>
+		</component>
+
+	</components>
+
+</entity>

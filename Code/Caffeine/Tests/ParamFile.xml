@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Settings.xml is not read by default, it is part of systems. -->
+<param_test>
+	
+	<test_data_1>
+
+		<basic_types>
+			<type_1>10.3</type_1>
+			<type_2>14.2 12.3</type_2>
+			<type_3>76.1 93.13 34.9</type_3>
+			<type_4>73.5 82.1 13.1 32.5</type_4>
+			<type_5>32.544</type_5>
+			<type_6>true</type_6>
+			<type_7>TRUE</type_7>
+			<type_8>TrUe</type_8>
+			<type_9>false</type_9>
+			<type_10>FALSE</type_10>
+			<type_11>fAlSe</type_11>
+			<type_12>-327</type_12>
+			<type_13>134532</type_13>
+			<type_14>Hello World</type_14>
+			<type_15>foo bar boo baz burp!</type_15>
+		</basic_types>
+
+	</test_data_1>
+
+	<test_data_2>
+
+		<test_limits>
+			<type_1>65535</type_1>
+			<type_2>32767</type_2>
+			<type_3>-32767</type_3>
+		</test_limits>
+
+	</test_data_2>
+
+	<test_data_3>
+
+		<break_limits>
+			<type_1>65536</type_1>
+			<type_2>32768</type_2>
+			<type_3>-32768</type_3>
+		</break_limits>
+
+	</test_data_3>
+
+</param_test>

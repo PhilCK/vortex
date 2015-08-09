@@ -1,0 +1,52 @@
+
+Skybox Shader
+-------------
+
+
+[VERTEXSHADER]
+
+#version 330
+
+// Vertex Format
+in vec2 inPosition;
+
+// WVP matrix.
+uniform mat4 worldToCameraMat;
+uniform mat4 projMat;
+
+// Output
+out vec3 eyeDir;
+
+void main()
+{
+	mat4 inverseProjection = inverse(projMat);
+	mat3 inverseModelview = transpose(mat3(worldToCameraMat));
+	vec3 unprojected = (inverseProjection * vec4(inPosition, 0, 1)).xyz;
+	eyeDir = inverseModelview * unprojected;
+
+	gl_Position = vec4(inPosition, 0, 1);
+}
+
+[/VERTEXSHADER]
+
+
+[PIXELSHADER]
+
+#version 330
+
+// Input
+in vec3 eyeDir;
+
+// Texture
+uniform samplerCube skyboxTex;
+
+// Output
+out vec4 outputColor;
+
+void main()
+{
+	outputColor = texture(skyboxTex, eyeDir);
+	//outputColor = vec4(1, 0, 0, 1);
+}
+
+[/PIXELSHADER]

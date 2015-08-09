@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- PowerPlant -->
+
+<entity>
+	
+	<name>PowerPlant</name>
+	<tags>power-output</tags>
+
+	<components>
+
+		<!-- Caffeine Components -->
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<position>0 0 0</position>
+			</params>
+		</component>
+
+		<!-- MVC -->
+
+		<component>
+			<name>PowerPlantModel</name>
+			<params>
+				<connector_type>medium</connector_type>
+				<max_power>100</max_power>
+				<number_of_sockets>4</number_of_sockets>
+			</params>
+		</component>
+
+		<component>
+			<name>PowerPlantView</name>
+			<params>
+				<model_name>power_station.obj</model_name>
+				<texture_name>power_station.png</texture_name>
+				<shader_name>FullBright.shd</shader_name>
+			</params>
+		</component>
+
+		<component>
+			<name>PowerPlantController</name>
+		</component>
+
+		<!-- Other -->
+
+	</components>
+
+
+</entity>

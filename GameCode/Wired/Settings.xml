@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	
+	<!-- Application - basic app settings -->
+	<application>
+		
+		<!-- Window Settings -->
+		<window>
+			<width>1280</width>
+			<height>720</height>
+			<fullscreen>false</fullscreen>
+			<title>Wired</title>
+		</window>
+		
+		<!-- Renderer Settings -->
+		<renderer>			
+			<depth_bits>24</depth_bits>
+			
+			<color_buffer>
+				<red_bits>3</red_bits>
+				<green_bits>3</green_bits>
+				<blue_bits>2</blue_bits>
+				<alpha_bits>0</alpha_bits>
+			</color_buffer>
+		</renderer>
+		
+	</application>
+	
+	<!-- Setup the system information -->
+	<systems>
+		<models>
+			<directory>Models</directory>
+			<extension>obj</extension>
+		</models>
+
+		<textures>
+			<directory>Textures</directory>
+			<extension>png</extension>
+		</textures>
+
+		<shaders>
+			<directory>Shaders</directory>
+			<extension>shd</extension>
+		</shaders>
+
+		<entities>
+			<directory>Entities</directory>
+			<extension>xml</extension>
+		</entities>
+
+		<scripts>
+			<directory>Code</directory>
+			<extension>as</extension>
+		</scripts>
+	</systems>
+
+	<!-- How much and where should logging go -->
+	<logging>
+		<level>all</level>
+		<outputs>console file</outputs>
+	</logging>
+
+</settings>

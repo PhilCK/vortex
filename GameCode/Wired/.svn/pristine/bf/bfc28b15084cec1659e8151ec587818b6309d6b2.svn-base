@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Player -->
+
+<entity>
+	
+	<name>Player</name>
+	<tags>player actor</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Rigidbody</name>
+			<params>
+				<mass>2</mass>
+			</params>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Cube</name>
+					<size>0.5</size>
+				</type>
+			</params>
+		</component>
+
+
+		<!-- MVC -->
+
+		<component>
+			<name>PlayerModel</name> <!-- Make generic actor -->
+		</component>
+
+		<component>
+			<name>PlayerView</name>
+		</component>
+
+		<component>
+			<name>PlayerController</name>
+		</component>
+
+	</components>
+</entity>

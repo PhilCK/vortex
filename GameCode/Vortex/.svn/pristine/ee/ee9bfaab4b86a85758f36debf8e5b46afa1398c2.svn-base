@@ -1,0 +1,120 @@
+
+
+class ShipModel : GameComponent
+{
+	// ** Model Getters ** //
+
+	bool isAlive() const { return m_currentHealthParam > 0; }
+	bool isDead() const  { return !isAlive();  				}
+
+
+
+	// ** Model Setters ** Please only access via obj controller ** //
+
+	void turnShip(const float amount)  	{ m_turnShip   += amount;   			}
+	void damageShip(const uint damage) 	{ m_damageShip += damage; 				}
+	void killShip() 					{ m_damageShip  = m_currentHealthParam; }
+
+
+
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getVortexTransform();
+	}
+
+
+
+	private void onParams(const Param &in params) override
+	{
+		m_maxHealthParam 	 	= params["max_health"].asUInt(m_maxHealthParam);
+		m_currentHealthParam	= params["current_health"].asUInt(m_maxHealthParam);
+		m_eventNamePrefixParam	= params["event_name_prefix"].asString(m_eventNamePrefixParam);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Turn the player around the tunnel.
+		{
+			const float moveAmount = m_turnShip * dt;
+
+			if(moveAmount != 0)
+			{
+				// TODO Send position! and or entity.
+				const float angle = getVortexTransform().getAngle() + moveAmount;
+				getVortexTransform().setAngle(angle);
+				Math::Vec3 position = getVortexTransform().getPosition();
+
+				// Send has moved event
+				const string moveEventName 	= m_eventNamePrefixParam + "Move";
+				const uint   moveEventID  	= getOwner().getEventManager().getEventID(moveEventName);
+				
+				getOwner().getEventManager().sendInstantEvent(moveEventID, moveAmount, angle);
+			}
+
+			m_turnShip = 0;
+		}
+
+		// Damage or Destroy Ship
+		{
+			if(m_damageShip >= m_currentHealthParam)
+			{
+				m_currentHealthParam = 0;
+
+				// Send is dead event.
+				const string deadEventName 	= m_eventNamePrefixParam + "Dead";
+				const uint   deadEventID 	= getOwner().getEventManager().getEventID(deadEventName);
+
+				getOwner().getEventManager().sendInstantEvent(deadEventID);
+			}
+			else
+			{
+				m_currentHealthParam -= m_damageShip;
+
+				// Send damage taken.
+				const string damageEventName 	= m_eventNamePrefixParam + "Damage";
+				const uint   damageEventID 	 	= getOwner().getEventManager().getEventID(damageEventName);
+
+				getOwner().getEventManager().sendInstantEvent(damageEventID);
+			}
+
+			m_damageShip = 0;
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private VortexTransform@ getVortexTransform()
+	{
+		if(m_vortexTransform is null)
+		{
+			@m_vortexTransform = @getOwner().getComponent("VortexTransform");
+
+			if(m_vortexTransform is null)
+			{
+				Print("ShipPlayerController: Failed to find vortex-transform");
+				return null;
+			}
+		}
+
+		return m_vortexTransform;
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 				m_currentHealthParam 	= 10;
+	private uint				m_maxHealthParam		= 10;
+	private string 				m_eventNamePrefixParam	= "Ship";
+
+	private float 				m_turnShip 				= 0.f;
+	private uint 				m_damageShip 			= 0;
+	private VortexTransform 	@m_vortexTransform 		= null;
+};

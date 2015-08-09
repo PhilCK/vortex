@@ -1,0 +1,44 @@
+/*
+	Head Hack Games
+	--
+	www.headhackgames.com
+	info@headhackgames.com
+	--
+	All rights reserved 2014.
+*/
+
+/*
+	GroundView
+	--
+	Displays the ground.
+*/
+
+class GroundView : GameComponent
+{
+	uint shaderID;
+	uint vertexFmtID;
+
+	void onStart()
+	{
+		if(getOwner() !is null)
+		{
+			Renderer@ renderer = getOwner().getRenderer();
+
+			// Get Shader.
+			{
+				shaderID = renderer.addShader("/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/AppAssets/Shaders/ForwardLighting.shd");
+
+				if(shaderID == 0)
+				{
+					Print("Nae shader :(");
+				}
+			}
+
+			// Vertex Format
+			{
+				
+			}
+		}
+	}
+
+};

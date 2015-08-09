@@ -1,0 +1,233 @@
+/*
+	ShipModel
+	--
+	Ship model will move a ship around the tunnel.
+*/
+
+
+// ** Event Indexes ** //
+
+/*
+	ShipModel events unlike other models may have a different prefix.
+	ShipPlayerMove, ShipEnemyMove etc. You need to know what the preifix is.
+*/
+
+enum ShipSpawnEvent 	{ OBJ_ID, POSITION, };
+enum ShipMoveEvent		{ OBJ_ID, POSITION, ANGLE, };
+enum ShipJumpingEvent	{ OBJ_ID, };
+enum ShipLandedEvent	{ OBJ_ID, };
+enum ShipDamageEvent	{ OBJ_ID, POSITION, };
+enum ShipDeadEvent 		{ OBJ_ID, POSITION, };
+
+
+class ShipModel : GameComponent
+{
+	// ** Model Getters ** //
+
+	bool isAlive() const 	{ return m_currentHealthParam > 0;	}
+	bool isDead() const  	{ return !isAlive();  				}
+	bool isJumping() const 	{ return m_isJumping; }
+
+
+
+	// ** Model Setters ** Please only access via obj controller ** //
+
+	void turnShip(const float amount)  	{ m_turnShip   += amount;   			}
+	void damageShip(const uint amount) 	{ m_damageShip += amount; 				}
+	void killShip() 					{ m_damageShip  = m_currentHealthParam; }
+
+
+
+	void jumpShip(const float amount)
+	{
+		m_isJumping = true;
+		m_jumpMomentum += amount;
+		m_groundLevel = getVortexTransform().getPosition().z;
+	}
+
+
+
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getVortexTransform();
+
+		// Spawned Message
+		{
+			const string spawnEventName = m_eventNamePrefixParam + "Spawn";
+			const uint   spawnEventID   = getOwner().getEventManager().getEventID(spawnEventName);
+
+			EventArg argObjID(getOwner().getID());
+			EventArg argPos(getVortexTransform().getPosition());
+
+			// Make next frame.
+			getOwner().getEventManager().sendInstantEvent(spawnEventID, argObjID, argPos);
+		}
+	}
+
+
+
+	private void onParams(const Param &in params) override
+	{
+		m_maxHealthParam 	 	= params["max_health"].asUInt(m_maxHealthParam);
+		m_currentHealthParam	= params["current_health"].asUInt(m_maxHealthParam);
+		m_eventNamePrefixParam	= params["event_name_prefix"].asString(m_eventNamePrefixParam);
+		m_gravityParam 			= params["gravity"].asFloat(m_gravityParam);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Turn the player around the tunnel.
+		{
+			const float moveAmount = m_turnShip * dt;
+
+			if(moveAmount != 0)
+			{
+				const float angle = getVortexTransform().getAngle() + moveAmount;
+				getVortexTransform().setAngle(angle);
+				const Math::Vec3 position = getVortexTransform().getPosition();
+
+				// Send Event
+				{
+					const string moveEventName 	= m_eventNamePrefixParam + "Move";
+					const uint   moveEventID  	= getOwner().getEventManager().getEventID(moveEventName);
+
+					/*
+					Event event;
+					event.at(OBJECT_ID) = EventArg(getOwner().getID());
+					event.at(POSITION) 	= EventArg(getOwner().getID());
+					event.at(ANGLE) 	= EventArg(getOwner().getID());
+					*/
+
+					EventArg argObjID(getOwner().getID());
+					EventArg argPos(position);
+					EventArg argAngle(angle);
+					
+					getOwner().getEventManager().sendInstantEvent(moveEventID, argObjID, argPos, argAngle);
+				}
+			}
+
+			// Reset Logic
+			m_turnShip = 0;
+		}
+
+		// Jump the ship up.
+		{
+			if(isJumping())
+			{
+				const Math::Vec3 position = getVortexTransform().getPosition();
+
+				// If started jump send started jump event
+				if(m_groundLevel == position.z)
+				{
+					const string jumpEventName 	= m_eventNamePrefixParam + "Jump";
+					const uint   jumpEventID  	= getOwner().getEventManager().getEventID(jumpEventName);
+
+					EventArg argObjID(getOwner().getID());
+					getOwner().getEventManager().sendInstantEvent(jumpEventID, argObjID);
+				}
+
+				getVortexTransform().setDepth(position.z + m_jumpMomentum);
+			
+				// Should stop jumping? or continue.
+				if(getVortexTransform().getDepth() < m_groundLevel)
+				{
+					m_jumpMomentum = 0.f;
+					m_groundLevel = 0.f;
+					m_isJumping = false;
+
+					// Landed Event
+					{
+						const string landedEventName 	= m_eventNamePrefixParam + "Landed";
+						const uint   landedEventID  	= getOwner().getEventManager().getEventID(landedEventName);
+
+						EventArg argObjID(getOwner().getID());
+						getOwner().getEventManager().sendInstantEvent(landedEventID, argObjID);
+					}
+				}
+				else
+				{
+					// Send move Event
+					{
+						const string moveEventName 	= m_eventNamePrefixParam + "Move";
+						const uint   moveEventID  	= getOwner().getEventManager().getEventID(moveEventName);
+
+						EventArg argObjID(getOwner().getID());
+						EventArg argPos(getVortexTransform().getPosition());
+						EventArg argAngle(getVortexTransform().getAngle());
+						
+						getOwner().getEventManager().sendInstantEvent(moveEventID, argObjID, argPos, argAngle);
+					}
+
+					m_jumpMomentum += (-m_gravityParam * dt);
+				}
+			}
+		}
+
+		// Damage or Destroy Ship
+		{
+			if(m_damageShip >= m_currentHealthParam)
+			{
+				m_currentHealthParam = 0;
+
+				// Send is dead event.
+				const string deadEventName 	= m_eventNamePrefixParam + "Dead";
+				const uint   deadEventID 	= getOwner().getEventManager().getEventID(deadEventName);
+
+				getOwner().getEventManager().sendInstantEvent(deadEventID);
+			}
+			else
+			{
+				m_currentHealthParam -= m_damageShip;
+
+				// Send damage taken.
+				const string damageEventName 	= m_eventNamePrefixParam + "Damage";
+				const uint   damageEventID 	 	= getOwner().getEventManager().getEventID(damageEventName);
+
+				getOwner().getEventManager().sendInstantEvent(damageEventID);
+			}
+
+			m_damageShip = 0;
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private VortexTransform@ getVortexTransform()
+	{
+		if(m_vortexTransform is null)
+		{
+			@m_vortexTransform = @getOwner().getComponent("VortexTransform");
+
+			if(m_vortexTransform is null)
+			{
+				Print("ShipPlayerController: Failed to find vortex-transform");
+				return null;
+			}
+		}
+
+		return m_vortexTransform;
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 				m_currentHealthParam 	= 10;
+	private uint				m_maxHealthParam		= 10;
+	private string 				m_eventNamePrefixParam	= "Ship";
+	private float 				m_gravityParam 			= 1.f;
+
+	private float 				m_turnShip 				= 0.f;
+	private float 				m_jumpMomentum 			= 0.f;
+	private bool 				m_isJumping 			= false;
+	private uint 				m_damageShip 			= 0;
+	private VortexTransform 	@m_vortexTransform 		= null;
+	private float 				m_groundLevel 			= 0;
+};

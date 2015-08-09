@@ -1,0 +1,84 @@
+
+class ShipPlayerController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_turnForceParam = params["turn_force"].asFloat(m_turnForceParam);
+		m_jumpForceParam = params["jump_force"].asFloat(m_jumpForceParam);
+	}
+
+
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getModel();
+
+		getOwner().getInput().setHoldMouse(true);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Player input.
+		{
+			Input @input = getOwner().getInput();
+
+			// Keyboard
+			{
+				// Move anti-clockwise
+				if(input.isDown(Key::KB_A))
+				{
+					getModel().turnShip(+m_turnForceParam);
+				}
+				// Move clockwise
+				if(input.isDown(Key::KB_D))
+				{
+					getModel().turnShip(-m_turnForceParam);
+				}
+			}
+
+			// Mouse
+			{
+				const float deltaMove = input.getMouseDeltaX();
+
+				getModel().turnShip(deltaMove);
+			}
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private ShipModel@ getModel()
+	{
+		// Try and get if it isn't there.
+		if(m_model is null)
+		{
+			@m_model = @getOwner().getComponent("ShipModel");
+			
+			if(m_model is null)
+			{
+				Print("ShipPlayerController: Failed to find model.");
+				return null;
+			}
+		}
+
+		return m_model;
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private float				m_turnForceParam 	= 0.7f;
+	private float 				m_jumpForceParam 	= 10.f;
+
+	private ShipModel 			@m_model 			= null;
+
+
+};

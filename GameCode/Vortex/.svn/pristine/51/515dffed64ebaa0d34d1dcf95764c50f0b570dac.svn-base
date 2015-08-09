@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Level -->
+
+<entity>
+	
+	<name>Level</name>
+	<tags>level</tags>
+
+	<components>
+		
+		<!-- Transform -->
+		
+		<component>
+			<name>Transform</name>
+		</component>	
+		
+		<!-- MVC -->
+		
+		<component>
+			<name>LevelModel</name>
+		</component>
+		
+		<component>
+			<name>LevelView</name>
+			<params>
+				<outter_one>
+					<model_name>LevelGeo01.obj</model_name>
+					<turn_speed>0.4f</turn_speed>
+				</outter_one>
+			</params>
+		</component>
+		
+		<component>
+			<name>LevelController</name>
+		</component>
+
+	</components>
+		
+</entity>

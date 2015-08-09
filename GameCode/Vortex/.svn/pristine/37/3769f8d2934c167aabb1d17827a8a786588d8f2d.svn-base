@@ -1,0 +1,184 @@
+
+/*@
+	## Description
+	
+	Logic for the Enemy Splitter.
+
+
+	## Params
+
+	
+
+	## Events
+
+
+	
+*/
+
+
+
+// ** Splitter States ** //
+
+enum EnemySplitterStates { NOTHING, SPAWNING, MOVING, SPLITTING, SLEEP, };	
+
+
+
+class EnemySplitterController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_cellDivideTimeParam		= params["cell_divide_time"].asFloat(m_cellDivideTimeParam);
+		m_numberOfCellDividesParam  = params["number_of_divides"].asUInt(m_numberOfCellDividesParam);
+	}
+
+
+
+	private void onStart() override
+	{
+
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		switch(m_state)
+		{
+			case(EnemySplitterStates::NOTHING):
+			{
+				if(getSpawnPosition().hasSpawned())
+				{
+					m_state = EnemySplitterStates::MOVING;
+				}
+
+				getSpawnPosition().makeSpawn();
+
+				break;
+			}
+
+			case(EnemySplitterStates::MOVING):
+			{
+				getVortexTransform().setDepth(getVortexTransform().getDepth() + (dt * 10.f));
+
+				if(getVortexTransform().getDepth() > 11.f)
+				{
+					m_state = EnemySplitterStates::SPLITTING;
+				}
+				break;
+			}
+
+			case(EnemySplitterStates::SPLITTING):
+			{
+				m_cellDivideTimer += dt;
+				++m_numberOfDivisions;
+
+				if(m_cellDivideTimer > m_cellDivideTimeParam)
+				{
+					getCellDivide().tryDivide();
+					m_cellDivideTimer = 0;
+
+					// are we done splitting?
+					if(m_numberOfDivisions >= m_numberOfCellDividesParam)
+					{
+						m_state = EnemySplitterStates::SLEEP;
+					}
+				}
+				break;
+			}
+		} // switch(...)
+	}
+
+
+
+	private bool onEvent(const Event &in data) override
+	{
+		// Was this entity created via a cell divide?
+		{
+			const uint cellDivideEventID = getOwner().getEventManager().getEventID("Direct-CellDivided");
+
+			if(data.getID() == cellDivideEventID)
+			{
+				m_state = EnemySplitterStates::SPLITTING;
+
+				getSpawnPosition().setSpawned();
+				getCellDivide().setSpawnFromDivide();
+
+				return false;
+			}
+		}
+
+		return false;
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private VortexTransform@ getVortexTransform()
+	{
+		if(m_vortexTransform is null)
+		{
+			@m_vortexTransform = @getOwner().getComponent("VortexTransform");
+
+			if(m_vortexTransform is null)
+			{
+				Print("EnemySplitterController: Failed to find vortex-transform.");
+				return null;
+			}
+		}
+
+		return m_vortexTransform;
+	}
+
+
+
+	private CellDivide@ getCellDivide()
+	{
+		if(m_cellDivide is null)
+		{
+			@m_cellDivide = @getOwner().getComponent("CellDivide");
+
+			if(m_cellDivide is null)
+			{
+				Print("EnemySplitterController: Failed to find CellDivide.");
+				return null;
+			}
+		}
+
+		return m_cellDivide;
+	}
+
+
+
+	private VortexSpawnPosition@ getSpawnPosition()
+	{
+		if(m_vortexSpawnPos is null)
+		{
+			@m_vortexSpawnPos = @getOwner().getComponent("VortexSpawnPosition");
+
+			if(m_vortexSpawnPos is null)
+			{
+				Print("EnemySplitterController: Failed to find VortexSpawnPosition.");
+				return null;
+			}
+		}
+
+		return m_vortexSpawnPos;
+	}		
+
+
+
+	// ** Member Vars ** //
+
+	private float 						m_cellDivideTimeParam		= 0.25f;
+	private uint 						m_numberOfCellDividesParam 	= 3;
+
+	private uint 						m_numberOfDivisions     = 0;
+	private float 						m_cellDivideTimer   	= 0.f;
+	private CellDivide 					@m_cellDivide 			= null;
+	private VortexTransform 			@m_vortexTransform  	= null;
+	private VortexSpawnPosition 		@m_vortexSpawnPos		= null;
+	private EnemySplitterStates			m_state 				= EnemySplitterStates::NOTHING;
+};

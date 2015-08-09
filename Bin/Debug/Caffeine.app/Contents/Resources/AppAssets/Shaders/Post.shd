@@ -1,0 +1,69 @@
+
+Post Process Shader
+------------------
+A basic grayscale post process shader
+
+
+[VERTEXSHADER]
+
+#version 150 core
+
+void main() {}
+
+[/VERTEXSHADER]
+
+[GEOMETRYSHADER]
+
+#version 150
+
+layout(points) in;
+layout(triangle_strip, max_vertices = 4) out;
+
+out vec2 gsTexC;
+
+void main()
+{
+	gl_Position = vec4(1.0, 1.0, 0.0, 1.0);
+    gsTexC = vec2(1.0, 1.0);
+    EmitVertex();
+
+    gl_Position = vec4(-1.0, 1.0, 0.0, 1.0);
+    gsTexC = vec2(0.0, 1.0); 
+    EmitVertex();
+
+    gl_Position = vec4(1.0,-1.0, 0.0, 1.0);
+    gsTexC = vec2(1.0, 0.0); 
+    EmitVertex();
+
+    gl_Position = vec4(-1.0,-1.0, 0.0, 1.0);
+    gsTexC = vec2(0.0, 0.0); 
+    EmitVertex();
+
+    EndPrimitive();
+}
+
+[/GEOMETRYSHADER]
+
+[PIXELSHADER]
+
+#version 150
+
+in vec2 gsTexC;
+
+uniform sampler2D renderTex;
+
+out vec4 outColor;
+
+float rgbToLum(vec3 rgb) {
+	return rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114;
+}
+
+void main()
+{
+	vec3 rgb = texture(renderTex, gsTexC).rgb;
+	vec3 lum = vec3(rgbToLum(rgb));
+
+	outColor = vec4(lum, 1.0);
+}
+
+[/PIXELSHADER]

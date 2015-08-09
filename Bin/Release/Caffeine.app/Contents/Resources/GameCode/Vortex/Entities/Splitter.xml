@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EnemyShip -->
+
+<entity>
+	
+	<name>Splitter</name>
+	<tags>enemy ship</tags>
+
+	<components>
+		
+		<!-- Transform and Physics -->
+		
+		<component>
+			<name>VortexTransform</name>
+			<params>
+				<scale>0.3 0.3 0.3</scale>
+			</params>
+		</component>
+		
+		<component>
+			<name>VortexPhysics</name>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Cube</name>
+					<extents>0.5</extents>
+				</type>
+			</params>
+		</component>
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>enemy_ship_01.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_orange.png</diffuse_map>
+				<diffuse_map_scale>3 3</diffuse_map_scale>
+			</params>
+		</component>	
+		
+		<!-- MVC -->
+		
+		<component>
+			<name>EnemySplitterController</name>
+			<params>
+			</params>
+		</component>
+
+		<component>
+			<name>VortexSpawnPosition</name>
+			<params>
+			</params>
+		</component>		
+
+		<component>
+			<name>CellDivide</name>
+			<params>
+			</params>
+		</component>
+
+		<component>
+			<name>ShipModel</name>
+			<params>
+				<max_health>10</max_health>
+				<current_health>10</current_health>
+				<speed>10</speed>
+			</params>
+		</component>
+
+		<component>
+			<name>CollisionDetection</name>
+			<params>
+				<collide_with_tag>bullet</collide_with_tag>
+			</params>
+		</component>		
+
+	</components>
+		
+</entity>

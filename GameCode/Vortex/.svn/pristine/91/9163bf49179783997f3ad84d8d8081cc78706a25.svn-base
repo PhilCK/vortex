@@ -1,0 +1,56 @@
+
+class CameraGameController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		registerForEvent(1);
+
+		// Get/Set the camera component
+		{
+			@m_cameraComponent = getOwner().getComponent("Camera");
+
+			// No camera component was included in the desc, try and add one.
+			if(m_cameraComponent is null)
+			{
+				// getOwner().addComponent("Camera");
+				@m_cameraComponent = getOwner().getComponent("Camera");
+
+				if(m_cameraComponent is null)
+				{
+					Print("No camera component.");
+				}
+			}
+
+			// Set the camera up.
+			if(m_cameraComponent !is null)
+			{
+				m_cameraComponent.makeActiveCamera();
+				m_cameraComponent.setPosition(m_position);
+
+				Math::Vec3 lookat = {0.f, 0.f, 0.f};
+				m_cameraComponent.setLookAt(lookat);
+			}
+		}
+	}
+
+
+	private bool onEvent(const Event @data)
+	{
+		const uint playerMoveID = getOwner().getEventManager().getEventID("PlayerMove");
+
+		if(data.getID() == playerMoveID)
+		{
+			Print("Got playerMoveID");
+		}
+
+		return false;
+	}
+
+
+	// ** Member Vars ** //
+
+	private CameraComponent 	@m_cameraComponent;
+	private Math::Vec3 			m_position = {0.f, 0.f, 25.f};
+};

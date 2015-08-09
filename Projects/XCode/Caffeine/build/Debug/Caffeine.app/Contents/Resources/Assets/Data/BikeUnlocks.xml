@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>e
+<config>
+
+	<name>BikeUnlocks</name>
+	<version>0</version>
+
+	<bikes>
+
+		<bike>
+			<name>RACER</name>
+			<unlock_cost>0</unlock_cost>
+
+			<max_speed>4</max_speed>
+			<acceleration>10</acceleration>
+			<movement>4</movement>
+
+			<upgrades>
+				<exhast>
+					<name>EXHAST_01</name>
+					<unlock_cost>1</unlock_cost>
+				</exhast>
+
+				<color>
+					<name>COLOR_01</name>
+					<unlock_cost>1</unlock_cost>
+				</color>
+
+				<boost>
+					<name>BOOST_01</name>
+					<unlock_cost>2</unlock_cost>
+				</boost>
+			</upgrades>
+		</bike>
+
+		<bike>
+			<name>BRUTE</name>
+			<unlock_cost>10</unlock_cost>
+
+			<max_speed>4</max_speed>
+			<acceleration>10</acceleration>
+			<movement>4</movement>
+
+			<upgrades>
+				<exhast>
+					<name>EXHAST_02</name>
+					<unlock_cost>10</unlock_cost>
+				</exhast>
+
+				<color>
+					<name>COLOR_02</name>
+					<unlock_cost>10</unlock_cost>
+				</color>
+
+				<boost>
+					<name>BOOST_02</name>
+					<unlock_cost>20</unlock_cost>
+				</boost>
+			</upgrades>			
+		</bike>
+
+	</bikes>
+
+</config>

@@ -1,0 +1,137 @@
+/*
+	Head Hack Games
+	--
+	www.headhackgames.com
+	info@headhackgames.com
+	--
+	All rights reserved 2014.
+*/
+
+/*
+	GroundView
+	--
+	Displays the ground.
+*/
+
+class GroundView : GameComponent
+{
+	uint shaderID;
+	uint vertexFmtID;
+	uint vertexBuffID;
+	uint textureID;
+
+	GroundView()
+	{
+		shaderID 	 = 0;
+		vertexFmtID  = 0;
+		vertexBuffID = 0;
+	}
+
+	void onStart()
+	{
+		Print("Ground OnStart");
+
+		Print(getOwner().getWindow().getTitle());
+
+		if(getOwner() !is null)
+		{
+			// Load Shader
+			{
+				shaderID = getOwner().getRenderer().addShader("/Users/user/Workspace/Other/caff/Bin/Debug/Caffeine.app/Contents/Resources/AppAssets/Shaders/FullBright.shd");
+
+				if(shaderID == 0)
+				{
+					Print("Couldn't load shader");
+				}
+			}
+
+			// Load Vert fmt
+			{
+				array<FormatDesc> vertFmt = {
+					{"inPosition", 	AttrFormat::FLOAT, 3},
+					{"inTexC", 		AttrFormat::FLOAT, 2},
+					{"inNormal",	AttrFormat::FLOAT, 3}
+				};
+
+				vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+				if(vertexFmtID == 0)
+				{
+					Print("Couldn't load vertex format");
+				}
+			}
+
+			// Verts
+			{
+				array<float> verts = {
+					-10.0f,  0.f, -10.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+					 10.0f,  0.f, -10.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+					 10.0f, 0.f, 10.0f,   1.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+
+					-10.0f,  0.f, -10.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+					 10.0f, 0.f, 10.0f, 	1.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+					-10.0f, 0.f, 10.0f, 	0.0f, 1.0f, 0.0f, 1.0f, 0.0f					
+				};
+
+				vertexBuffID = getOwner().getRenderer().addVertexBuffer(verts);
+
+				if(vertexBuffID == 0)
+				{
+					Print("Couldn't load vertices!");
+				}
+			}
+
+			// Texture
+			{
+				textureID = getOwner().getRenderer().addTexture("/Users/user/Workspace/Other/caff/Bin/Debug/Caffeine.app/Contents/Resources/AppAssets/Textures/dev_grid_orange.png");
+
+				if(textureID == 0)
+				{
+					Print("Couldn't load texture!");
+				}
+			}
+
+		}
+		else
+		{
+			Print("Error: No Owner!");
+		}
+	}
+
+
+	void onRender()
+	{
+		Print("On Render Ground");
+
+		Renderer 		@renderer = getOwner().getRenderer();
+		CameraComponent @camera   = getOwner().getCameraManager().getCurrentCamera();
+
+		//renderer.setClearColor(1, 0, 0, 1);
+
+		Mat4 world = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1};
+		Vec2 scale = {5, 5};
+
+		if(renderer !is null && camera !is null)
+		{
+			renderer.reset();
+			renderer.setShader(shaderID);
+			renderer.setVertexFormat(vertexFmtID);
+			renderer.setVertexBuffer(vertexBuffID);
+
+			renderer.setTexture("diffuseTex", textureID);
+			renderer.setShader2f("texScale", scale);
+			renderer.setShaderMatrix44f("worldMat", world);
+			renderer.setShaderMatrix44f("viewMat", camera.getViewMatrix());
+			renderer.setShaderMatrix44f("projMat", camera.getProjMatrix());
+
+			renderer.apply();
+
+			renderer.drawArray(Primitive::TRIANGLES, 0, 6);
+		}
+		else
+		{
+			Print("Failed to get renderer or camera");
+		}
+	}
+
+};

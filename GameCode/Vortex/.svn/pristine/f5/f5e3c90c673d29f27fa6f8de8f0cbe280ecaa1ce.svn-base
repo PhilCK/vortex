@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GameState -->
+
+<state>
+	
+	<name>GameState</name>
+
+	<on_start>
+
+		<!-- Startup Events -->
+		<event>
+			<id>create_entity</id>
+			<args>
+				<arg>Player</arg>
+				<arg>these are params</arg>
+			<args>
+		</event>
+
+		<event>
+			<id>create_entity</id>
+			<args>
+				<arg>GameCamera</arg>
+				<arg>these are params</arg>
+			<args>
+		</event>
+
+	</on_start>
+
+</state>

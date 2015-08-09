@@ -1,0 +1,37 @@
+/*
+
+*/
+
+class PlayerController : GameComponent
+{
+
+	PlayerModel@ model;
+
+	void onStart()
+	{
+		// Find Model
+		
+	}
+
+
+	//[OnEvent ["InputControllerDirection"]]
+	void playerMove()
+	{
+
+	}
+
+
+	//[OnEvent ["InputControllerRotation"]]
+	void playerLook()
+	{
+
+	}
+
+
+	//[OnEvent ["InputControllerJump"]]
+	void playerJump()
+	{
+
+	}
+
+};

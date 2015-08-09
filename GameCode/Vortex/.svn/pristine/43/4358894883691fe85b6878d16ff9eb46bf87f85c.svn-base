@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bullet -->
+
+<entity>
+
+	<name>Bullet</name>
+	<tags>projectile bullet</tags>
+
+	<components>
+
+		<!-- Transform, Physics, Model and Material -->
+
+		<component>
+			<name>VortexTransform</name>
+			<params>
+				<scale>0.2 0.2 0.2</scale>
+			</params>
+		</component>
+
+		<component>
+			<name>VortexPhysics</name>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Cube</name>
+					<extents>1</extents>
+				</type>
+			</params>
+		</component>
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>ship01.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_red.png</diffuse_map>
+				<diffuse_map_scale>3 3</diffuse_map_scale>
+			</params>
+		</component>
+
+		<!-- MVC -->
+
+		<component>
+			<name>ProjectileModel</name>
+			<params>
+				<damage>10</damage>
+				<speed>10</speed>
+				<health>1</health>
+			</params>
+		</component>
+
+		<component>
+			<name>ProjectileView</name>
+			<params>
+				<model>BULLET</model>
+			</params>
+		</component>
+
+		<component>
+			<name>ProjectileController</name>
+			<params>
+			</params>
+		</component>
+
+	</components>
+
+</entity>

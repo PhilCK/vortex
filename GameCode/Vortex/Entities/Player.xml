@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Player -->
+
+<entity>
+	
+	<name>Player</name>
+	<tags>player ship</tags>
+
+	<components>
+		
+		<!-- Transform and Physics -->
+
+		<component>
+			<name>Transform</name>
+		</component>
+		
+		<component>
+			<name>VortexTransform</name>
+			<params>
+				<depth>9</depth>
+				<move_event_name>player_move</move_event_name>
+				<destroy_on_out_of_bounds>false</destroy_on_out_of_bounds>
+			</params>
+		</component>
+		
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>ship01.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>BlinnPhongMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_blue.png</diffuse_map>
+				<diffuse_map_scale>3 3</diffuse_map_scale>
+			</params>
+		</component>
+		
+		<!-- MVC -->
+		
+		<component>
+			<name>StarShipController</name>
+		</component>
+		
+		<component>
+			<name>Movement</name>
+			<params>
+				<move_event_name>player_move</move_event_name>
+			</params>
+		</component>
+
+	</components>
+
+</entity>

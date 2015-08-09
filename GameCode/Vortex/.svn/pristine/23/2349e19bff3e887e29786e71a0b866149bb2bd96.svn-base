@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MainState -->
+
+<state>
+
+	<name>MainState</name>
+
+	<!-- State setup -->
+	<setup>
+	</setup>
+
+	<!-- When the state is created -->
+	<on_create>
+
+		<instantiate_entity>
+			<name>GameController</name>
+		</instantiate_entity>		
+
+		<instantiate_entity>
+			<name>GameCamera</name>
+		</instantiate_entity>
+
+		<instantiate_entity>
+			<name>Level</name>
+		</instantiate_entity>
+
+	</on_create>
+
+	<!-- When the state is pushed onto the state stack -->
+	<on_focus>
+	</on_focus>
+
+	<!-- When the state is back at the top of the stack -->
+	<on_re_focus>
+	</on_re_focus>
+
+	<!-- When the state is pushed under on the stack -->
+	<on_de_focus>
+	</on_de_focus>
+
+	<!-- When the state is popped off the stack -->
+	<on_end>
+	</on_end>
+
+</state>

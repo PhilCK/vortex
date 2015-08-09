@@ -1,0 +1,89 @@
+
+/*
+	VortexTransform
+	--
+	From a given angle this transform figures out where on the vortex the ship should be.
+*/
+class VortexTransform : GameComponent
+{
+	// ** Component Interface ** //
+
+	void  setAngle(const float angle) 	{ m_vortexAngleParam = angle; }
+	float getAngle() const 				{ return m_vortexAngleParam;  }
+
+	void  setDepth(const float depth) 	{ m_vortexDepthParam = depth; }
+	float getDepth() const 				{ return m_vortexDepthParam;  }
+
+	Math::Vec3 getPosition() const
+	{
+		const float x = Math::Cos(m_vortexAngleParam) * m_vortexRadiusParam;
+		const float y = Math::Sin(m_vortexAngleParam) * m_vortexRadiusParam;
+
+		const Math::Vec3 position = { x, y, m_vortexDepthParam };
+
+		return position;
+	}
+
+
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getTransform();
+	}
+
+
+	private void onParams(const Param &in params) override
+	{
+		m_vortexRadiusParam = params["vortex_radius"].asFloat(m_vortexRadiusParam);
+		m_vortexAngleParam  = params["vortex_angle"].asFloat(m_vortexAngleParam);
+		m_vortexDepthParam  = params["vortex_depth"].asFloat(m_vortexDepthParam);
+	}
+
+
+	private void onLateThink(const float dt) override
+	{
+		getTransform().setWorldPosition(getPosition());
+
+		// TODO: Does this belong here? this might be better off inside object controllers.
+		const Math::Vec3 rotation = {0.f, 0.f, getAngle() + Math::HalfPi()};
+		getTransform().setRotation(rotation);
+	}
+
+
+	// ** Comp Helpers ** //
+
+	private TransformComponent@ getTransform()
+	{
+		if(m_transform is null)
+		{
+			@m_transform = @getOwner().getComponent("Transform");
+
+			// Failed to find.
+			if(m_transform is null)
+			{
+				getOwner().addComponent("Transform");
+				@m_transform = @getOwner().getComponent("Transform");
+
+				// Failed to add.
+				if(m_transform is null)
+				{
+					Print("VortexTransform: Couldn't find or add transform component.");
+					return null;
+				}
+			}
+		}
+
+		return m_transform;
+	}
+
+
+	// ** Member Vars ** //
+
+	private float 			m_vortexRadiusParam = 6.0f;
+	private float 			m_vortexAngleParam  = 0.f;
+	private float 			m_vortexDepthParam  = 0.f;
+
+	TransformComponent 		@m_transform = null;
+};

@@ -1,0 +1,77 @@
+
+class Hook : GameComponent
+{
+
+	// ** Engine Hooks **//
+
+	private void onParams(const Param &in params) override
+	{
+		// Called when the entity is created.
+		// Params are called when the component has been attached to the entity.
+		// So there is no guarentee other components will have been created yet.
+		// But the component owner has now been set.
+	}
+
+
+
+	private void onStart() override
+	{
+		// Called when pushed to state, and has statemanager set.
+		// Consider all components now attached, if the state was
+		// created from the factory.
+	}
+
+
+
+	private void onAttach() override
+	{
+		// Called when the component is attached to an entity.
+		// In construction or using addComponent().
+	}
+
+
+
+	private void onDisattach() override
+	{
+		// Call when removeComponent() is invoked.
+	}
+
+
+
+	private void onEarlyThink(const float dt) override
+	{
+		// First update call.
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Second update call.
+	}
+
+
+
+	private void onLateThink(const float dt) override
+	{
+		// Thrid update call.
+	}
+
+
+
+	private bool onEvent(const Event @data) override
+	{
+		// Called when a component has registered for event data.
+
+		// Return true if you wish to swallow the event.
+		return false;
+	}
+
+
+
+	private void onEnd() override
+	{
+		// Called just before the entity is removed from the state.
+	}
+
+};

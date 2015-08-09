@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{da4c12bb-7e07-498f-9f34-5d0201aa64a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine">
+      <UniqueIdentifier>{9750b015-6e4d-4686-b6e4-98806e4a268f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes">
+      <UniqueIdentifier>{b710441d-a311-4c0d-886d-f7997beeb108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Application">
+      <UniqueIdentifier>{7129107f-7e0a-4f11-8a12-3d9f0edae0a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Components">
+      <UniqueIdentifier>{521ef776-c29e-43bb-a048-2e0e9b492647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Entity">
+      <UniqueIdentifier>{951392f3-55d1-4538-b7f8-a278cb49a122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Lib">
+      <UniqueIdentifier>{8d24b2d9-1bbf-49e4-85a9-7752fc38c678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Math">
+      <UniqueIdentifier>{1e204d26-0d35-4c65-b5f0-24f16c4a8969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Systems">
+      <UniqueIdentifier>{a17e2206-b93c-4e08-b1b5-1109c9fa664e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Interface">
+      <UniqueIdentifier>{106c6290-7258-4b66-a762-762298ba278f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Utilities">
+      <UniqueIdentifier>{e8239d67-9106-4ea2-975e-d8018c845fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\AngelScript">
+      <UniqueIdentifier>{9e31b56e-aab6-4a1c-80e9-59b1165d2ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\tinyxml2">
+      <UniqueIdentifier>{cc1d576c-f8f6-4d85-a77d-8ea6b6e01b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\Dirent">
+      <UniqueIdentifier>{95e57b86-f11b-40d9-8229-2b76906dee37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\SOIL">
+      <UniqueIdentifier>{d5a65510-d2a6-44c2-b647-d1a7b2de68f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\SQLite">
+      <UniqueIdentifier>{35e8da31-6145-4108-9614-4c7fd0acac4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\AngelScript\add_on">
+      <UniqueIdentifier>{d5fa4b49-8ea1-4e7c-83ce-17034a8e32c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caffeine\Scriptables">
+      <UniqueIdentifier>{168041c0-45c3-4fe1-8b2d-a8b559538a6e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Application.cpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Input.cpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Model.cpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Renderer.cpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Window.cpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\CameraComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\InputComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\PhysicsComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\RenderableComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\StorageComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\TransformComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Entity\Component.cpp">
+      <Filter>Caffeine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Entity\Entity.cpp">
+      <Filter>Caffeine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Interface\ScriptComponent.cpp">
+      <Filter>Caffeine\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Interface\ScriptState.cpp">
+      <Filter>Caffeine\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Math\Math.cpp">
+      <Filter>Caffeine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\Loader.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\ModelManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\PhysicsDebugRenderer.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\PhysicsManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\PropertyManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\ScriptManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\State.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\StateSystem.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\TextRenderer.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\TextureManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\CaffeineMain.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\CameraManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\DebugRenderer.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\EntityFactory.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\Event.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\EventManager.cpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\AnyData.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Directories.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\ParamNode.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\SimpleCam.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\StringHelpers.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Timer.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\ASHelper.cpp">
+      <Filter>Includes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\tinyxml2\tinyxml2.cpp">
+      <Filter>Includes\tinyxml2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\Dirent\dirent.c">
+      <Filter>Includes\Dirent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\image_DXT.c">
+      <Filter>Includes\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\image_helper.c">
+      <Filter>Includes\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\SOIL.c">
+      <Filter>Includes\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\stb_image_aug.c">
+      <Filter>Includes\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\SQLite\sqlite3.c">
+      <Filter>Includes\SQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Application\Main.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\contextmgr\contextmgr.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\debugger\debugger.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptany\scriptany.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptarray\scriptarray.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptbuilder\scriptbuilder.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptdictionary\scriptdictionary.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptfile\scriptfile.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptgrid\scriptgrid.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scripthandle\scripthandle.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scripthelper\scripthelper.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmath.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmathcomplex.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptstdstring\scriptstdstring.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptstdstring\scriptstdstring_utils.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\serializer\serializer.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\weakref\weakref.cpp">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffAppGlue.cpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffCompGlue.cpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffMathGlue.cpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffSysGlue.cpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Param.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\ColliderComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffUtilGlue.cpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\ModelComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\MaterialComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Logging.cpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\LightComponent.cpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Code\Caffeine\Caffeine.hpp">
+      <Filter>Caffeine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Platform.hpp">
+      <Filter>Caffeine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Version.hpp">
+      <Filter>Caffeine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Application.hpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\ApplicationFwd.hpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Input.hpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Model.hpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Renderer.hpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Window.hpp">
+      <Filter>Caffeine\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\CameraComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\ComponentsFwd.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\InputComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\PhysicsComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\RenderableComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\StorageComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\TransformComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Entity\Component.hpp">
+      <Filter>Caffeine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Entity\Entity.hpp">
+      <Filter>Caffeine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Entity\EntityFwd.hpp">
+      <Filter>Caffeine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Interface\ScriptComponent.hpp">
+      <Filter>Caffeine\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Interface\ScriptState.hpp">
+      <Filter>Caffeine\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Lib\Array.hpp">
+      <Filter>Caffeine\Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Lib\String.hpp">
+      <Filter>Caffeine\Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Math.hpp">
+      <Filter>Caffeine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\EventManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\Loader.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\ModelManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\PhysicsDebugRenderer.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\PhysicsManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\PropertyManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\ScriptManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\State.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\StateSystem.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\SystemFwd.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\TextRenderer.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\TextureManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\CaffeineMain.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\CameraManager.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\DebugRenderer.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\EntityFactory.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\Event.hpp">
+      <Filter>Caffeine\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\AnyData.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\Directories.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\Logging.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\NonCopyable.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\ParamNode.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\SimpleCam.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\StringHelpers.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\Timer.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\UtilitiesFwd.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\ASHelper.hpp">
+      <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\UnitTest.hpp">
+      <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\tinyxml2\tinyxml2.h">
+      <Filter>Includes\tinyxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\Dirent\dirent.h">
+      <Filter>Includes\Dirent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\image_DXT.h">
+      <Filter>Includes\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\image_helper.h">
+      <Filter>Includes\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\SOIL.h">
+      <Filter>Includes\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\stb_image_aug.h">
+      <Filter>Includes\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\stbi_DDS_aug.h">
+      <Filter>Includes\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\stbi_DDS_aug_c.h">
+      <Filter>Includes\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\SQLite\sqlite3.h">
+      <Filter>Includes\SQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\autowrapper\aswrappedcall.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\contextmgr\contextmgr.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\debugger\debugger.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptany\scriptany.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptarray\scriptarray.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptbuilder\scriptbuilder.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptdictionary\scriptdictionary.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptfile\scriptfile.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptgrid\scriptgrid.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scripthandle\scripthandle.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scripthelper\scripthelper.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmath.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmathcomplex.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptstdstring\scriptstdstring.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\serializer\serializer.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\weakref\weakref.h">
+      <Filter>Includes\AngelScript\add_on</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffAppGlue.hpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffCompGlue.hpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffMathGlue.hpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffSysGlue.hpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\DebugVector.hpp">
+      <Filter>Caffeine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Matrix.hpp">
+      <Filter>Caffeine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Quaternion.hpp">
+      <Filter>Caffeine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Vector.hpp">
+      <Filter>Caffeine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\param.hpp">
+      <Filter>Caffeine\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\ColliderComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffUtilGlue.hpp">
+      <Filter>Caffeine\Scriptables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\ModelComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\MaterialComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\LightComponent.hpp">
+      <Filter>Caffeine\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Code\Caffeine\Systems\Readme.md">
+      <Filter>Caffeine\Systems</Filter>
+    </None>
+  </ItemGroup>
+</Project>

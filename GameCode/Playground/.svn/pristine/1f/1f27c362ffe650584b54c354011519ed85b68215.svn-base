@@ -1,0 +1,82 @@
+
+class CharacterController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+	}
+
+
+
+	private void onStart() override
+	{
+		// Hold mouse
+		getOwner().getInput().setHoldMouse(true);
+
+		// Check if transform component is present.
+		{
+			TransformComponent @transform = getOwner().getComponent("Transform");
+
+			if(transform is null)
+			{
+				Util::LogWarning("CharacterController: Transform not found.");
+			}
+		}
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		TransformComponent @transform 	= getOwner().getComponent("Transform");
+		Input @input 					= getOwner().getInput();
+
+		if(transform !is null)
+		{
+			// Rotation
+			{
+				const float dx = input.getMouseDeltaX();
+
+				Math::Vec3 rot = transform.getRotation();
+				rot.y = rot.y + (dx * dt);
+
+				transform.setRotation(rot);
+			}
+
+			//Position
+			{
+				Math::Vec3 move = {0,0,0};
+
+				const float moveSpeed = 10.f * dt;
+
+				// W,A,S,D movement
+				if(input.isDown(Input::KB_W))
+				{
+					move.z += moveSpeed;
+				}
+				if(input.isDown(Input::KB_S))
+				{
+					move.z -= moveSpeed;
+				}
+				if(input.isDown(Input::KB_A))
+				{
+					move.x += moveSpeed;
+				}
+				if(input.isDown(Input::KB_D))
+				{
+					move.x -= moveSpeed;
+				}
+
+				const Math::Vec3 position 	= transform.getPosition();
+				const Math::Vec3 moveTo 	= position.add(move);
+				
+				transform.setPosition(moveTo);
+			}
+		}
+	}
+
+	// ** Member Vars ** //
+
+
+};

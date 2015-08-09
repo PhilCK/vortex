@@ -1,0 +1,165 @@
+/*@
+	## Description
+	
+	Will make a duplicate of the object, and then it will scale upto the correct size.
+
+
+	## Params
+
+	- divisions - The amount of divisions the object is able to create.
+	- scale_speed - The speed in which the object will scale up if was created by this class.
+
+
+	## Events
+	
+	- CellDivideStart [ID : uint, Position : vec3] - When a cell divide has started.
+	- CellDivideFinished [ID : uint] - When the cell divide has ended.
+*/
+
+
+
+// ** Event Indexes ** //
+
+enum CellDivideStart 		{ OBJ_ID, POSITION, };
+enum CellDivideFinished 	{ OBJ_ID, };
+
+
+
+// ** Model State ** //
+
+enum CellDivideState { NOTHING, DIVIDING, DIVIDED, };
+
+
+
+// ** Model Impl ** //
+
+class CellDivide : GameComponent
+{
+	// ** Component Interface ** //
+
+	bool hasDivided() const		{ return m_timesDivided != 0; 						}
+	bool canDivide() const 		{ return m_timesDivided < m_numberOfDivisionsParam; }
+
+
+
+	bool tryDivide()
+	{
+		if(!canDivide())
+		{
+			return false;
+		}
+
+		// Spawn the same entity near by.
+		Entity @entity = getOwner().getState().pushNewEntity(getOwner().getName());
+
+		if(entity !is null)
+		{
+			// Set position to just left or right of original
+			{
+				const VortexTransform @oldCellTransform = getOwner().getComponent("VortexTransform");
+					  VortexTransform @newCellTransform = entity.getComponent("VortexTransform");
+
+				if(oldCellTransform !is null && newCellTransform !is null)
+				{
+					const float newAngle = oldCellTransform.getAngle() + 0.5f;
+					const float newDepth = oldCellTransform.getDepth();
+
+					newCellTransform.setAngle(newAngle);
+					newCellTransform.setDepth(newDepth);
+
+					m_endScale = newCellTransform.getScale();
+					newCellTransform.setScale(m_startScale);
+				}
+				else
+				{
+					Print("CellDivide: An entity is missing a component.");
+				}
+			}
+
+			// Send the spawn cell divide message to the object.
+			{
+				const string eventName = "Direct-CellDivided";
+				const uint   eventID   = getOwner().getEventManager().getEventID(eventName);
+
+				Event event(eventID);
+
+				entity.onEvent(event);
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
+
+
+	void setSpawnFromDivide()
+	{
+		m_state = CellDivideState::DIVIDING;
+
+		// Fire Start Event
+		{
+			
+		}
+	}
+
+
+
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_numberOfDivisionsParam 	= params["divisions"].asUInt(m_numberOfDivisionsParam);
+		m_scaleSpeedParam 			= params["scale_speed"].asFloat(m_scaleSpeedParam);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		switch(m_state)
+		{
+			case(CellDivideState::DIVIDING):
+			{
+				m_currentScale += (m_scaleSpeedParam * dt);
+				m_currentScale  = Math::Min(m_endScale, m_currentScale);
+
+				VortexTransform @transform = getOwner().getComponent("VortexTransform");
+
+				if(transform !is null)
+				{
+					transform.setScale(m_currentScale);
+				}
+
+				if(m_currentScale >= m_endScale)
+				{
+					if(transform !is null)
+					{
+						transform.setScale(m_endScale);
+					}
+
+					m_state = CellDivideState::DIVIDED;
+
+					// Fire End event
+					{
+
+					}
+				}
+			}
+		}
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 				m_numberOfDivisionsParam 	= 1;
+	private float 				m_scaleSpeedParam			= 2.f;
+
+	private uint 				m_timesDivided  			= 0;
+	private CellDivideState		m_state 					= CellDivideState::NOTHING;
+	private float 				m_startScale 				= 0.f;
+	private float 				m_endScale 					= 1.f;
+	private float 				m_currentScale				= 0.f;
+};

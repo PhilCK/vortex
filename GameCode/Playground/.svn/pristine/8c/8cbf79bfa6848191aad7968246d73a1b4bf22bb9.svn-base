@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity>
+	
+	<name>TransformChildren</name>
+	<tags>transform cube scale</tags>
+
+	<components>
+
+		<!-- Transform and Physics -->
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<scale>1 1 1</scale>
+				<position>0 1 0</position>
+			</params>
+		</component>
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>cube.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_orange.png</diffuse_map>
+				<diffuse_map_scale>1 1</diffuse_map_scale>
+			</params>
+		</component>
+
+		<component>
+			<name>ScaleObjectTest</name>
+			<params>
+				<scale_in>ALL</scale_in>
+			</params>
+		</component>
+
+	</components>
+
+	<children>
+
+		<entity>
+
+			<name>Sub</name>
+			<tags>transform cube scale</tags>
+
+			<components>
+
+				<component>
+					<name>Transform</name>
+					<params>
+						<scale>0.5 0.5 0.5</scale>
+						<position>2 0 0</position>
+					</params>
+				</component>
+
+				<component>
+					<name>Model</name>
+					<params>
+						<model_name>cube.obj</model_name>
+					</params>
+				</component>
+
+				<component>
+					<name>FullbrightMaterial</name>
+					<params>
+						<diffuse_map>dev_grid_orange.png</diffuse_map>
+						<diffuse_map_scale>1 1</diffuse_map_scale>
+					</params>
+				</component>
+
+			</components>
+		</entity>
+
+	</children>
+		
+</entity>

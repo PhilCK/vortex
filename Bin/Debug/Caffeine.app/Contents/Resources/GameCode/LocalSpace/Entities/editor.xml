@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity>
+	
+	<name>Editor</name>
+	<tags>editor</tags>
+
+	<components>
+		
+		<component>
+			<name>Transform</name>
+			<params>
+			</params>
+		</component>
+		
+		<component>
+			<name>EditorModel</name>
+		</component>
+
+		<component>
+			<name>EditorController</name>
+		</component>
+
+		<component>
+			<name>EditorView</name>
+		</component>
+
+	</components>
+		
+</entity>

@@ -1,0 +1,153 @@
+
+class ShipPlayerController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_turnForceParam = params["turn_force"].asFloat(m_turnForceParam);
+		m_jumpForceParam = params["jump_force"].asFloat(m_jumpForceParam);
+	}
+
+
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getModel();
+		getWeaponSystem();
+
+		getOwner().getInput().setHoldMouse(true);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Player input.
+		{
+			Input @input = getOwner().getInput();
+
+			// Keyboard
+			{
+				// Move anti-clockwise
+				if(input.isDown(Key::KB_A))
+				{
+					getModel().turnShip(+m_turnForceParam);
+				}
+				// Move clockwise
+				if(input.isDown(Key::KB_D))
+				{
+					getModel().turnShip(-m_turnForceParam);
+				}
+				// Jump
+				if(input.isDown(Key::KB_SPACE) && !getModel().isJumping())
+				{
+					getModel().jumpShip(m_jumpForceParam);
+				}
+			}
+
+			// Mouse
+			{
+				// Turn ship
+				{
+					const float deltaMove = input.getMouseDeltaX();
+
+					if(deltaMove != 0)
+					{
+						getModel().turnShip(deltaMove);
+					}
+				}
+
+				// Fire
+				if(input.isDown(Key::MS_LEFT))
+				{
+					getWeaponSystem().fireWeapon(getVortexTransform().getPosition());
+				}
+			}
+		}
+	}
+
+
+
+	private void onCollision(const CollidedWith &in collidedWith)
+	{
+		//collidedWith.entity.destroy();
+		if(collidedWith.entity.hasTag("enemy_projectile"))
+		{
+			getModel().killShip();
+			collidedWith.entity.destroy();
+			// getOwner().destroy();
+			// collidedWith.entity.destroy();
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private ShipModel@ getModel()
+	{
+		// Try and get if it isn't there.
+		if(m_model is null)
+		{
+			@m_model = @getOwner().getComponent("ShipModel");
+			
+			if(m_model is null)
+			{
+				Print("ShipPlayerController: Failed to find model.");
+				return null;
+			}
+		}
+
+		return m_model;
+	}
+
+
+
+	private VortexTransform@ getVortexTransform()
+	{
+		if(m_vortexTransform is null)
+		{
+			@m_vortexTransform = @getOwner().getComponent("VortexTransform");
+
+			if(m_vortexTransform is null)
+			{
+				Print("ShipPlayerController: Failed to find vortex-transform.");
+				return null;
+			}
+		}
+
+		return m_vortexTransform;
+	}
+
+
+
+	private WeaponSystem@ getWeaponSystem()
+	{
+		if(m_weaponSystem is null)
+		{
+			@m_weaponSystem = @getOwner().getComponent("WeaponSystem");
+
+			if(m_weaponSystem is null)
+			{
+				Print("ShipPlayerController: Failed to find weapon system.");
+				return null;
+			}
+		}
+
+		return m_weaponSystem;
+	}
+
+
+	// ** Member Vars ** //
+
+	private float				m_turnForceParam 	= 0.7f;
+	private float 				m_jumpForceParam 	= 0.5f;
+
+	private ShipModel 			@m_model 			= null;
+	private VortexTransform 	@m_vortexTransform 	= null;
+	private WeaponSystem 		@m_weaponSystem 	= null;
+
+
+};

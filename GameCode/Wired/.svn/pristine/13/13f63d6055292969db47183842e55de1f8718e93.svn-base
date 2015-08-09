@@ -1,0 +1,42 @@
+
+
+// MainState - 
+class MainState : GameState
+{
+
+	void onStart()
+	{
+		Print("onStart");
+	}
+
+	
+	void onEnter()
+	{
+		Print("onEnd");
+	}
+
+	
+	void onExit()
+	{
+		Print("onExit");
+	}
+
+	
+	void onEnd()
+	{
+		Print("onEnd");
+	}
+
+	
+	void onThink(const float dt)
+	{
+		Print("onThink");
+	}
+
+	
+	void onEvent()
+	{
+		Print("onEvent");
+	}
+
+};

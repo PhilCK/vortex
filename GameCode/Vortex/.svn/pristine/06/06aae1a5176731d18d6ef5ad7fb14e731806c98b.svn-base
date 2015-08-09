@@ -1,0 +1,89 @@
+
+class LevelViewRing : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_shaderName 				= params["shader_name"].asString(m_shaderName);
+		m_modelParam 				= params["model_name"].asString(m_modelParam);
+		m_textureParam 				= params["texture_name"].asString(m_textureParam);
+		m_radiusParam				= params["raduis"].asFloat(m_radiusParam);
+		m_numberOfIteratorsParam	= params["iterations"].asUInt(m_numberOfIteratorsParam);
+		m_turnVelocity				= params["turn_velocity"].asFloat(m_turnVelocity);
+	}
+
+
+
+	private void onStart() override
+	{
+		// Load shader
+		{
+			m_shaderID = getOwner().getRenderer().addShader("FullBright.shd");
+
+			if(m_shaderID == 0)
+			{
+				Print("Couldn't load shader");
+			}
+		}
+
+		// Load Vert fmt
+		{
+			array<FormatDesc> vertFmt = {
+				{"inPosition", 	AttrFormat::FLOAT, 3},
+				{"inTexC", 		AttrFormat::FLOAT, 2},
+				{"inNormal",	AttrFormat::FLOAT, 3}
+			};
+
+			m_vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+			if(m_vertexFmtID == 0)
+			{
+				Print("Couldn't load vertex format");
+			}
+		}
+
+		// Texture
+		{
+			m_textureID = getOwner().getRenderer().addTexture(m_textureParam);
+
+			if(m_textureID == 0)
+			{
+				Print("Couldn't load texture!");
+			}
+		}
+
+		// Rotate Trasform
+		{
+			TransformComponent @transform = getOwner().getComponent("Transform");
+
+			const Math::Vec3 rot = {0.f, Math::Pi(), 0.f};
+
+			transform.setRotation(rot);
+		}
+	}
+
+
+
+	private void onRender() override
+	{
+
+	}
+
+
+	// ** Member Vars ** //
+
+	private uint 			m_shaderID 					= 0;
+	private uint 			m_vertexFmtID 				= 0;
+	private uint 			m_vertexBufferID 			= 0;
+	private uint 			m_textureID 				= 0;
+	private ModelData 		@m_modelData;
+
+	private string 			m_shaderName 				= "FullBright.shd";
+	private string 			m_modelParam 				= "ship01.obj";
+	private string 			m_textureParam 				= "dev_grid_red.png";
+	private float 			m_radiusParam				= 0.f;
+	private uint 			m_numberOfIteratorsParam	= 6;
+	private float 			m_turnVelocity 				= 0.1f;
+
+};

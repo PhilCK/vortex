@@ -1,0 +1,81 @@
+/*
+	PlayerModel.as
+*/
+
+//[RegisteredEvents ["PlayerMoved", "PlayerJumped", "PlayerDied", "PlayerSpawned"]]
+class PlayerModel : GameComponent
+{
+	uint shaderID;
+	uint vertexFmtID;
+	uint vertexBuffID;
+
+	PlayerModel()
+	{
+		shaderID 	 = 0;
+		vertexFmtID  = 0;
+		vertexBuffID = 0;
+	}
+
+	void onStart()
+	{
+		Print("Player OnStart");
+
+		Print(getOwner().getWindow().getTitle());
+
+		if(getOwner() !is null)
+		{
+			// Load Shader
+			{
+				shaderID = getOwner().getRenderer().addShader("FullBright.shd");
+
+				if(shaderID == 0)
+				{
+					Print("Couldn't load shader");
+				}
+			}
+
+			// Load Vert fmt
+			{
+				array<FormatDesc> vertFmt = {
+					{"inPosition", 	AttrFormat::FLOAT, 3},
+					{"inTexC", 		AttrFormat::FLOAT, 2}
+				};
+
+				vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+				if(vertexFmtID == 0)
+				{
+					Print("Couldn't load vertex format");
+				}
+			}
+
+			// Verts
+			{
+				array<float> verts = {
+					  // X      Y     Z     R     G     B     U     V
+					    -0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+					     0.5f,  0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+					     0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+					    -0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f
+				};
+
+				vertexBuffID = getOwner().getRenderer().addVertexBuffer(verts);
+
+				if(vertexBuffID == 0)
+				{
+					Print("Couldn't load vertices!");
+				}
+			}
+
+		}
+		else
+		{
+			Print("Error: No Owner!");
+		}
+	}
+	
+	void onThink(const float dt)
+	{
+		Print("On Think");
+	}
+};

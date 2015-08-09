@@ -1,0 +1,42 @@
+/*
+
+*/
+
+class PlayerController : GameComponent
+{
+
+	PlayerModel @m_model;
+
+	void onStart()
+	{
+		// // Find Model
+		// PlayerModel @model = cast<PlayerModel@>(getOwner().getComponent("PlayerModel"));
+
+		// if(m_model is null)
+		// {
+		// 	Print("Couldn't find PlayerModel");
+		// }
+	}
+
+
+	//[OnEvent ["InputControllerDirection"]]
+	void playerMove()
+	{
+
+	}
+
+
+	//[OnEvent ["InputControllerRotation"]]
+	void playerLook()
+	{
+
+	}
+
+
+	//[OnEvent ["InputControllerJump"]]
+	void playerJump()
+	{
+
+	}
+
+};

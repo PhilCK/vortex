@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity>
+	
+	<name>Ground</name>
+	<tags>ground</tags>
+
+	<components>
+		
+		<!-- Transform and Physics -->
+		
+		<component>
+			<name>Transform</name>
+			<params>
+				<scale>9 1 9</scale>
+			</params>
+		</component>
+		
+		<component>
+			<name>Rigidbody</name>
+			<params>
+				<show_debug>true</show_debug>
+				<mass>0</mass>
+			</params>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Plane</name>
+				</type>
+			</params>
+		</component>
+
+<!-- 		<component>
+			<name>Model</name>
+			<params>
+				<model_name>plane.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_red.png</diffuse_map>
+				<diffuse_map_scale>9 9</diffuse_map_scale>
+			</params>
+		</component> -->
+
+	</components>
+		
+</entity>

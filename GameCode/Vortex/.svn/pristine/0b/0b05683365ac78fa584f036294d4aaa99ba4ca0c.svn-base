@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bullet -->
+
+<entity>
+
+	<name>Bullet</name>
+	<tags>projectile bullet</tags>
+
+	<components>
+
+		<!-- Transform and Physics -->
+
+		<component>
+			<name>VortexTransform</name>
+		</component>
+
+		<component>
+			<name>VortexPhysics</name>
+		</component>		
+
+		<!-- MVC -->
+
+		<component>
+			<name>ProjectileModel</name>
+			<params>
+				<damage>10</damage>
+				<speed>10</speed>
+				<health>1</health>
+			</params>
+		</component>
+
+		<component>
+			<name>ProjectileView</name>
+			<params>
+				<model>BULLET</model>
+			</params>
+		</component>
+
+		<component>
+			<name>ProjectileController</name>
+			<params>
+			</params>
+		</component>
+
+	</components>
+
+</entity>

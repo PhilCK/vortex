@@ -1,0 +1,185 @@
+/*
+	PlayerModel.as
+*/
+
+//[RegisteredEvents ["PlayerMoved", "PlayerJumped", "PlayerDied", "PlayerSpawned"]]
+class PlayerModel : GameComponent
+{
+	uint shaderID;
+	uint vertexFmtID;
+	uint vertexBuffID;
+
+	PlayerModel()
+	{
+		shaderID 	 = 0;
+		vertexFmtID  = 0;
+		vertexBuffID = 0;
+	}
+
+	void onStart()
+	{
+		Print("Player OnStart");
+		registerForEvent(123);
+		
+		//sendEvent();
+		//sendNetworkEvent();
+		//sendQudedEvent();
+
+		Print(getOwner().getWindow().getTitle());
+
+		if(getOwner() !is null)
+		{
+			// Make a collider
+			{
+				
+			}
+
+			// Load Shader
+			{
+				shaderID = getOwner().getRenderer().addShader("FullBright.shd");
+
+				if(shaderID == 0)
+				{
+					Print("Couldn't load shader");
+				}
+			}
+
+			// Load Vert fmt
+			{
+				array<FormatDesc> vertFmt = {
+					{"inPosition", 	AttrFormat::FLOAT, 3},
+					{"inTexC", 		AttrFormat::FLOAT, 2},
+					{"inNormal", 	AttrFormat::FLOAT, 3},
+				};
+
+				vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+				if(vertexFmtID == 0)
+				{
+					Print("Couldn't load vertex format");
+				}
+			}
+
+			// Verts
+			{
+				array<float> verts = {
+					// X      Y     Z     R     G     B     U     V
+					-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+					 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+
+					-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+					 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+
+					-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+					-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+
+					 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+					 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+
+					-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+					-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+
+					-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+					 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+					 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+					-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+					-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f
+				};
+
+				vertexBuffID = getOwner().getRenderer().addVertexBuffer(verts);
+
+				if(vertexBuffID == 0)
+				{
+					Print("Couldn't load vertices!");
+				}
+			}
+		}
+		else
+		{
+			Print("Error: No Owner!");
+		}
+	}
+	
+	void onThink(const float dt)
+	{
+		getOwner().getCameraManager().getCurrentCamera().getViewMatrix();
+
+		Print("On Think");
+	}
+
+	bool onEvent(const Event @data)
+	{
+		Print("****EVENT****");
+
+		if(data is null)
+		{
+			Print("No Event Data, but got an event!!!");
+		}
+
+		if(data.getID() == 123)
+		{
+			Print("Got 123");
+			Print(data.at(0).asFloat());
+		}
+		else
+		{
+			Print("Some other event");
+		}
+
+		return false;
+	}
+
+	void onRender()
+	{
+		Print("On Render");
+
+		Renderer @renderer = getOwner().getRenderer();
+		CameraComponent @camera = getOwner().getCameraManager().getCurrentCamera();
+
+		//renderer.setClearColor(1, 0, 0, 1);
+
+		Mat4 world = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1};
+
+		if(renderer !is null && camera !is null)
+		{
+			renderer.reset();
+			renderer.setShader(shaderID);
+			renderer.setVertexFormat(vertexFmtID);
+			renderer.setVertexBuffer(vertexBuffID);
+
+			renderer.setShaderMatrix44f("worldMat", world);
+			renderer.setShaderMatrix44f("viewMat", camera.getViewMatrix());
+			renderer.setShaderMatrix44f("projMat", camera.getProjMatrix());
+
+			renderer.apply();
+
+			//renderer.drawArray(Primitive::TRIANGLES, 0, 36);
+		}
+		else
+		{
+			Print("Failed to get renderer or camera");
+		}
+
+	}
+};

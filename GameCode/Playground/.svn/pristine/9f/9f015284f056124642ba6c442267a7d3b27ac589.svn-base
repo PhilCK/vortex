@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity>
+	
+	<name>Actor</name>
+	<tags>actor</tags>
+
+	<components>
+		
+		<!-- Transform and Physics -->
+		
+		<component>
+			<name>Transform</name>
+			<params>
+				<position>0 0 0</position>
+			</params>
+		</component>
+		
+<!-- 		<component>
+			<name>Rigidbody</name>
+			<params>
+				<mass>1</mass>
+			</params>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Cube</name>
+					<extents>1</extents>
+				</type>
+			</params>
+		</component> -->
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>cube.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_blue.png</diffuse_map>
+			</params>
+		</component>
+
+		<component>
+			<name>CharacterController</name>
+		</component>
+
+	</components>
+		
+</entity>

@@ -1,0 +1,42 @@
+
+class ShipModel : GameComponent
+{
+
+	// ** Model Getters ** //
+
+	bool isAlive() const { return m_currentHealth > 0; 	}
+	bool isDead() const  { return !isAlive();  			}
+
+	
+
+	// ** Model Setters ** //
+
+
+
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		
+	}
+
+
+	// void onParams(Params &params) override
+	// {
+	// 	m_maxHealth 		= params["max_health"].asUint(m_maxHealth);
+	// 	m_currentHealth		= params["current_health"].asUint(m_maxHealth);
+	// }
+
+
+	private void onThink(const float dt) override
+	{
+
+	}
+
+
+	// ** Member Vars ** //
+
+	private uint 	m_currentHealth 	= 10;
+	private uint	m_maxHealth			= 10;
+
+};

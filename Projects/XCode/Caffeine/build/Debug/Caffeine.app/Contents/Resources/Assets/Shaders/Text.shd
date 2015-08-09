@@ -1,0 +1,83 @@
+
+Text Shader
+-----------
+This is just a copy-paste from fullbright, it needs alot of work.
+
+
+[VERTEXSHADER]
+
+#version 150 core
+
+// Vertex Format
+in vec3 inPosition;
+in vec2 inTexC;
+in vec3 inNormal;
+
+// WVP matrix.
+uniform mat4 worldMat;
+uniform mat4 viewMat;
+uniform mat4 projMat;
+
+// Texture settings
+uniform vec2 texScale  = vec2(1, 1);
+uniform vec2 texOffset = vec2(0, 0);
+
+// Other settings
+uniform vec3 vertScale = vec3(1, 1, 1);
+uniform vec4 color	   = vec4(1, 1, 1, 0);
+uniform float character;
+
+// Output Format
+out vec2 texC;
+out vec4 colorMix;
+
+void main()
+{
+	// Position vert
+	mat4 wvpMat = projMat * viewMat * worldMat;
+	vec3 position = vec3(inPosition.x * vertScale.x, inPosition.y * vertScale.y, inPosition.z * vertScale.z);
+
+	gl_Position = wvpMat * vec4(position.xyz, 1.0);
+	//gl_Position = vec4(inPosition.xy, 0.0, 1.0);
+	//gl_Position = vec4(vec2(0.1, 0.1), 0.2, 1.0);
+
+	float maxRowCol = 16.0;
+	float rowu = floor(character / maxRowCol);
+	float colu = floor(mod(character, maxRowCol));
+
+	// int maxRowsCol = 16;
+	// int selectChar = int(character); //39
+	// int rowu = selectChar / maxRowsCol;
+	// int colu = mod(selectChar, maxRowsCol); // 41
+
+	float factor = 1.0 / 16.0;
+
+	float u = (colu * factor) + (factor * inTexC.x);
+	float v = (rowu * factor) + (factor * inTexC.y);
+
+	texC = vec2(u,v);
+	
+	colorMix = color;
+}
+
+[/VERTEXSHADER]
+
+
+[PIXELSHADER]
+
+#version 150
+
+in vec2 texC;
+in vec4 colorMix;
+
+uniform sampler2D diffuseTex;
+
+out vec4 outColor;
+
+void main()
+{
+	vec4 texColor = texture(diffuseTex, texC);
+	outColor = mix(texColor, colorMix, colorMix.w);
+}
+
+[/PIXELSHADER]

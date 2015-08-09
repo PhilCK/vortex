@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+
+	<name>Laptop</name>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Physics</name>
+		</component>
+
+		<!-- MVC Components -->
+
+		<component>
+			<name>LaptopModel</name>
+		</component>
+
+		<component>
+			<name>LaptopView</name>
+		</component>
+
+		<component>
+			<name>LaptopController</name>
+		</component>
+
+	</components>
+
+</entity>

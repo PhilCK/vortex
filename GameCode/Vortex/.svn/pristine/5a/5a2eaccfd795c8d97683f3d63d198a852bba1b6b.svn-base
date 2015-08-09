@@ -1,0 +1,41 @@
+
+class CameraGameController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		// Get/Set the camera component
+		{
+			@m_cameraComponent = getOwner().getComponent("Camera");
+
+			// No camera component was included in the desc, try and add one.
+			if(m_cameraComponent is null)
+			{
+				// getOwner().addComponent("Camera");
+				@m_cameraComponent = getOwner().getComponent("Camera");
+
+				if(m_cameraComponent is null)
+				{
+					Print("No camera component.");
+				}
+			}
+
+			// Set the camera up.
+			if(m_cameraComponent !is null)
+			{
+				m_cameraComponent.makeActiveCamera();
+				m_cameraComponent.setPosition(m_position);
+
+				Vec3 lookat = {0.f, 0.f, 0.f};
+				m_cameraComponent.setLookAt(lookat);
+			}
+		}
+	}
+
+
+	// ** Member Vars ** //
+
+	private CameraComponent 	@m_cameraComponent;
+	private Vec3 				m_position = {0.1f, 3.1f, 15.1f};
+};

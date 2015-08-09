@@ -1,0 +1,74 @@
+
+/*
+	CameraGameModel
+	--
+	TODO: Fix the MVC relationship.
+*/
+class CameraGameModel : GameComponent
+{
+	// ** Model Getters ** //
+
+	Math::Vec3 	getTargetPosition() const 	{ return m_targetPosition;  	}
+	float 		getChangeRate() const 		{ return m_changeRateParam; 	}
+
+
+
+	// ** Model Setters ** //
+
+	void setTargetPosition(const Math::Vec3 &in target) { m_targetPosition = target; 		}
+	void setChangeRate(const float changeRate)  		{ m_changeRateParam = changeRate; 	}
+
+
+
+	// ** Engine Hooks ** //
+	
+	private void onStart() override
+	{
+
+	}
+
+
+
+	private void onParams(const Param &in params) override
+	{
+		m_changeRateParam = params["change_rate"].asFloat(m_changeRateParam);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Update current position ** Can be overriden by controller by setting changeRatepParam to zero.
+		{
+
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+	private CameraComponent@ getVortexTransform()
+	{
+		if(m_cameraComponent is null)
+		{
+			@m_cameraComponent = @getOwner().getComponent("Camera");
+
+			if(m_cameraComponent is null)
+			{
+				Print("CameraGameModel: Failed to find camera");
+				return null;
+			}
+		}
+
+		return m_cameraComponent;
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private float 						m_changeRateParam  = 1.f;
+
+	private Math::Vec3 					m_targetPosition   = {0.f, 0.f, 0.f};
+	private CameraComponent 			@m_cameraComponent = null;
+};

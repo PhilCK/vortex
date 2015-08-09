@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Player -->
+
+<entity>
+	
+	<name>GameController</name>
+	<tags>game</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<rotation_degrees>-45 0 0</rotation_degrees>
+			</params>
+		</component>		
+				
+		<component>
+			<name>GameController</name>
+			<params>
+			</params>
+		</component>
+
+		<component>
+			<name>GameModel</name>
+			<params>
+			</params>
+		</component>
+
+		<component>
+			<name>DirectionalLight</name>
+			<params>
+			</params>
+		</component>			
+
+	</components>
+		
+</entity>

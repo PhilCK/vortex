@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Debug Ground is a grid for testing on. -->
+
+<entity>
+	
+	<name>DebugGround</name>
+	<tags>debug ground</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Rigidbody</name>
+			<params>
+				<mass>0</mass>
+			<params>
+		</component>
+
+		<!-- MV -->
+
+		<component>			
+			<name>GroundModel</name>
+			<params>
+				<ground_size>10</ground_size>
+			</params>
+		</component>
+
+		<component>			
+			<name>GroundView</name>
+			<params>
+				<texture_name>dev_orange_grid</texture_name>
+				<shader_name>fullbright</shader_name>
+			</params>
+		</component>
+
+	</components>
+
+</entity>

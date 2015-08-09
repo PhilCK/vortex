@@ -1,0 +1,45 @@
+
+/*
+	VortexPhysics
+	--
+	We only use the physics engine for collision detection. There is no real physics in here.
+*/
+class VortexPhysics : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onAttach() override
+	{
+		getOwner().addComponent("Rigidbody");
+	}
+
+
+
+	private void onStart() override
+	{
+		@m_rigidbody = getOwner().getComponent("Rigidbody");
+
+		// Setup rigidbody.
+		if(m_rigidbody !is null)
+		{
+			m_rigidbody.setTrigger(false);
+			m_rigidbody.setMass(1.f);
+			m_rigidbody.showDebug(true);
+		}
+		else
+		{
+			Print("VortexPhysics: No rigidbody was found.");
+		}
+	}
+
+	// Kill this.
+	void setPhysics()
+	{
+		m_rigidbody.setTrigger(true);
+	}
+
+
+	// ** Member Vars ** //
+
+	private PhysicsComponent 		@m_rigidbody = null;
+};

@@ -1,0 +1,144 @@
+
+/*
+	VortexTransform
+	--
+	From a given angle this transform figures out where on the vortex the ship should be.
+*/
+class VortexTransform : GameComponent
+{
+	// ** Component Interface ** //
+
+	void  setAngle(const float angle) 	{ m_vortexAngleParam = angle; }
+	float getAngle() const 				{ return m_vortexAngleParam;  }
+
+	void  setTilt(const float tilt) 	{ m_tiltParam = tilt; }
+	float getTilt() const 				{ return m_tiltParam; }
+
+	void  setDepth(const float depth) 	{ m_vortexDepthParam = depth; }
+	float getDepth() const 				{ return m_vortexDepthParam;  }
+
+	void  setFarDeathZone(const float deadZone)	{ m_farDeathZoneParam = deadZone; }
+	float getFarDeathZone() const 				{ return m_farDeathZoneParam; 	}
+
+	void  setNearDeathZone(const float deadZone)	{ m_nearDeathZoneParam = deadZone; }
+	float getNarDeathZone() const 					{ return m_nearDeathZoneParam; 	}
+
+	Math::Vec3 getPosition() const
+	{
+		const float x = Math::Cos(m_vortexAngleParam) * m_vortexRadiusParam;
+		const float y = Math::Sin(m_vortexAngleParam) * m_vortexRadiusParam;
+
+		const Math::Vec3 position = { x, y, m_vortexDepthParam };
+
+		return position;
+	}
+
+	void setPosition(const Math::Vec3 &in position)
+	{
+		const float centerX = 0.f;
+		const float centerY = 0.f;
+
+		const float dx = position.x - centerX;
+		const float dy = position.y - centerY;
+
+		const float angle = Math::ATan2(dy, dx);
+
+		setAngle(angle);
+		setDepth(position.z);
+	}
+
+
+
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_vortexRadiusParam   = params["vortex_radius"].asFloat(m_vortexRadiusParam);
+		m_vortexAngleParam    = params["vortex_angle"].asFloat(m_vortexAngleParam);
+		m_tiltParam 		  = params["tilt"].asFloat(m_tiltParam);
+		m_vortexDepthParam    = params["vortex_depth"].asFloat(m_vortexDepthParam);
+		m_farDeathZoneParam   = params["far_death_zone"].asFloat(m_farDeathZoneParam);
+		m_nearDeathZoneParam  = params["near_death_zone"].asFloat(m_nearDeathZoneParam);
+	}
+
+
+
+	private void onAttach() override
+	{
+		getOwner().addComponent("Transform");
+	}	
+
+		
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getTransform();
+		Math::Vec3 scale = {0.7f, 0.7f, 0.7f};
+
+		getTransform().setScale(scale);
+		getTransform().setWorldPosition(getPosition());
+	}
+
+
+
+	private void onLateThink(const float dt) override
+	{
+		getTransform().setWorldPosition(getPosition());
+
+		// TODO: Does this belong here? this might be better off inside object controllers.
+		const Math::Vec3 rotation = {0.f, 0.f, getTilt() + getAngle() + Math::HalfPi()};
+		getTransform().setRotation(rotation);
+
+		// Are we out of the vortex?
+		{
+			const Math::Vec3 position = getPosition();
+
+			if(position.z > m_nearDeathZoneParam || position.z < m_farDeathZoneParam)
+			{
+				getOwner().destroy();
+			}
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private TransformComponent@ getTransform()
+	{
+		if(m_transform is null)
+		{
+			@m_transform = @getOwner().getComponent("Transform");
+
+			// Failed to find.
+			if(m_transform is null)
+			{
+				getOwner().addComponent("Transform");
+				@m_transform = @getOwner().getComponent("Transform");
+
+				// Failed to add.
+				if(m_transform is null)
+				{
+					Print("VortexTransform: Couldn't find or add transform component.");
+					return null;
+				}
+			}
+		}
+
+		return m_transform;
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private float 			m_vortexRadiusParam   = 6.0f;
+	private float 			m_vortexAngleParam    = 0.f;
+	private float 			m_tiltParam 		  = 0.f;
+	private float 			m_vortexDepthParam    = 0.f;
+	private float 			m_farDeathZoneParam   = -20.f;
+	private float 			m_nearDeathZoneParam  = 30.f;
+
+	TransformComponent 		@m_transform 		  = null;
+};

@@ -1,0 +1,140 @@
+
+class LevelView : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		if(params.doesMemberExist("outter_one"))
+		{
+			const string modelName = params["outter_one"]["model_name"].asString("");
+			const float  turnSpeed = params["outter_one"]["turn_speed"].asFloat(0.1f);
+
+			if(modelName != "")
+			{
+				ModelData modelData = getOwner().getModelManager().getModelData(modelName);
+				m_models.insertLast(modelData);
+
+				m_turnSpeedParams.insertLast(turnSpeed);
+			}
+		}
+	}
+
+
+
+	private void onStart() override
+	{
+		// Load shader
+		{
+			m_shaderID = getOwner().getRenderer().addShader("FullBright.shd");
+
+			if(m_shaderID == 0)
+			{
+				Print("Couldn't load shader");
+			}
+		}
+
+		// Load Vert fmt
+		{
+			array<FormatDesc> vertFmt = {
+				{"inPosition", 	AttrFormat::FLOAT, 3},
+				{"inTexC", 		AttrFormat::FLOAT, 2},
+				{"inNormal",	AttrFormat::FLOAT, 3}
+			};
+
+			m_vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+			if(m_vertexFmtID == 0)
+			{
+				Print("Couldn't load vertex format");
+			}
+		}
+
+		// Texture
+		{
+			m_textureID = getOwner().getRenderer().addTexture(m_textureParam);
+
+			if(m_textureID == 0)
+			{
+				Print("Couldn't load texture!");
+			}
+		}
+
+		// Rotate Trasform
+		{
+			TransformComponent @transform = getOwner().getComponent("Transform");
+
+			const Math::Vec3 rot = {0.f, Math::Pi(), 0.f};
+
+			transform.setRotation(rot);
+		}
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Temp while level isn't complete
+		{
+			TransformComponent @transform = getOwner().getComponent("Transform");
+
+			m_rotLevel = m_rotLevel + (m_turnSpeedParams[0] * dt * (0.5f));
+
+			//const Math::Vec3 rot = {Math::HalfPi(), 0.f, 0.f};
+			const Math::Vec3 rot = {0, 0.f, m_rotLevel};
+
+			transform.setRotation(rot);
+		}
+	}
+
+
+
+	private void onRender() override
+	{
+		Renderer 				 @renderer 	= getOwner().getRenderer();
+		const CameraComponent	 @camera   	= getOwner().getCameraManager().getCurrentCamera();
+		const TransformComponent @transform = getOwner().getComponent("Transform");
+
+		const Math::Mat4 world = transform.getWorldMatrix();
+		const Math::Vec2 scale = {5, 5};
+
+		if(renderer !is null && camera !is null)
+		{
+			for(uint i = 0; i < m_models.length(); ++i)
+			{
+				renderer.reset();
+				renderer.setShader(m_shaderID);
+				renderer.setVertexFormat(m_vertexFmtID);
+				renderer.setVertexBuffer(m_models[i].get_vertexBufferID(0));
+				renderer.setIndexBuffer(m_models[i].get_indexBufferID(0));
+
+				renderer.setTexture("diffuseTex", m_textureID);
+				renderer.setShader2f("texScale", scale);
+				renderer.setShaderMatrix44f("worldMat", world);
+				renderer.setShaderMatrix44f("viewMat", camera.getViewMatrix());
+				renderer.setShaderMatrix44f("projMat", camera.getProjMatrix());
+
+				renderer.apply();
+
+				renderer.drawArray(Primitive::TRIANGLES, 0, m_models[i].getModel().getMesh(0).getGLFaces());
+			}
+		}
+		else
+		{
+			Print("Failed to get renderer or camera");
+		}
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 				m_shaderID 			= 0;
+	private uint 				m_vertexFmtID 		= 0;
+	private uint 				m_textureID 		= 0;
+	private float 				m_rotLevel 			= 0.f; // temp to make level rotate.
+
+	private array<ModelData>	m_models;
+	private string 				m_textureParam 		= "dev_grid_orange.png";
+	private array<float>		m_turnSpeedParams;
+};

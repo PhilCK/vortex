@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bullet -->
+
+<entity>
+
+	<name>Bullet</name>
+	<tags>projectile bullet</tags>
+
+	<components>
+
+		<!-- Transform, Physics, Model and Material -->
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<scale>0.3 0.3 0.3</scale>
+			</params>
+		</component>
+
+		<component>
+			<name>VortexTransform</name>
+		</component>
+
+		<component>
+			<name>VortexPhysics</name>
+		</component>
+
+		<component>
+			<name>Rigidbody</name>
+			<params>
+				<show_debug>true</show_debug>
+				<mass>1</mass>
+			</params>
+		</component>		
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>cube</name>
+					<extents>0.5</extents>
+				</type>
+			</params>
+		</component>
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>ship01.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_red.png</diffuse_map>
+				<diffuse_map_scale>3 3</diffuse_map_scale>
+			</params>
+		</component>
+
+		<!-- MVC -->
+
+		<component>
+			<name>BulletController</name>
+			<params>
+				<velocity>-40</velocity>
+			</params>
+		</component>
+
+		<component>
+			<name>Movement</name>
+			<params>
+				<move_event_name>enemy_ship_move</move_event_name>
+			</params>
+		</component>		
+
+	</components>
+
+</entity>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Player -->
+
+<entity>
+	
+	<name>Player</name>
+	<tags>player actor</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<position>0 10 0</position>
+			</params>
+		</component>
+
+		<component>
+			<name>Rigidbody</name>
+			<params>
+				<mass>2</mass>
+				<rotation_axis>y</rotation_axis>
+			</params>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Box</name>
+					<extents>0.5 1 0.5</extents>
+				</type>
+			</params>
+		</component>
+
+		<!-- MVC -->
+
+		<component>
+			<name>PlayerModel</name>
+			<params>
+				<walk>1</walk>
+				<jump>10</jump>
+				<rotation>1</rotation>
+				<run_multiplier>4</run_multiplier>
+			</params>
+		</component>
+
+		<component>
+			<name>PlayerView</name>
+		</component>
+
+		<component>
+			<name>PlayerController</name>
+		</component>
+
+	</components>
+
+	<!-- Children -->
+
+	<children>
+<!-- 
+ 		<entity>
+
+			<name>PlayerChildTest</name>
+			<tags>childtest</tags>
+
+			<components>
+
+				<component>
+					<name>Transform</name>
+					<params>
+						<position>3 5 0</position>
+					</params>
+				</component>
+				
+				<component>
+					<name>Collider</name>
+					<params>
+						<type>
+							<name>Cube</name>
+							<extent>0.5</extent>
+						</type>
+					</params>
+				</component>
+
+			</components>
+
+		</entity>
+-->
+<!-- 
+		<entity>
+
+			<name>PlayerCamera</name>
+			<tags>camera</tags>
+
+			<components>
+
+				<component>
+					<name>Transform</name>
+				</component>
+
+				<component>
+					<name>Camera</name>
+					<params>
+						<fov>80</fov>
+					</params>
+				</component>
+
+			</components>
+
+		</entity>
+ -->
+	</children>
+
+
+</entity>

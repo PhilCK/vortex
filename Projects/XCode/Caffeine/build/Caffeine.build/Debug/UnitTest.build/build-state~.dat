@@ -1,0 +1,86 @@
+TUnitTest
+v6
+r1
+cCheck dependencies
+cCompileC build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c0000000053725086000000000000044C
+t1400000646
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c000000005372508600000000000001DE
+t1400000646
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c000000005372508E0000000000000ADC
+t1400000654
+s2780
+
+N/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp
+c0000000053F0ADD7000000000000011B
+t1408282071
+s283
+
+N/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+CBuild AST from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesc154cb62e5a0b941^c537d062e5a0b941^---0#1#1#--18"Check dependencies36"35D972C2-4B4F-497A-B9E6-F8014E044D1B-
+
+CCompileC build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s429974882.813765
+e429974883.096175
+r0
+xCompileC
+xbuild/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o
+x/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp
+d/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp
+d/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp
+oIn file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:10:
+o/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp:6:28: error: expected ';' after expression
+o    std::cout << "test foo" std::endl;
+o                           ^
+o                           ;
+o/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp:6:29: error: reference to overloaded function could not be resolved; did you mean to call it?
+o    std::cout << "test foo" std::endl;
+o                            ^~~~~~~~~
+oIn file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:9:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:40:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/istream:156:
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ostream:1188:1: note: possible target for call
+oendl(basic_ostream<_CharT, _Traits>& __os)
+o^
+oIn file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:11:
+o/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp:6:28: error: expected ';' after expression
+o    std::cout << "test bar" std::endl;
+o                           ^
+o                           ;
+o/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp:6:29: error: reference to overloaded function could not be resolved; did you mean to call it?
+o    std::cout << "test bar" std::endl;
+o                            ^~~~~~~~~
+oIn file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:9:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:40:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/istream:156:
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ostream:1188:1: note: possible target for call
+oendl(basic_ostream<_CharT, _Traits>& __os)
+o^
+o4 errors generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp159"CompileC build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o UnitTest/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerbb64d062e5a0b941^aa9e1863e5a0b941^-2286"In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:10:/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp:6:28: error: expected ';' after expression    std::cout << "test foo" std::endl;                           ^                           ;/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp:6:29: error: reference to overloaded function could not be resolved; did you mean to call it?    std::cout << "test foo" std::endl;                            ^~~~~~~~~In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:9:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:40:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/istream:156:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ostream:1188:1: note: possible target for callendl(basic_ostream<_CharT, _Traits>& __os)^In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:11:/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp:6:28: error: expected ';' after expression    std::cout << "test bar" std::endl;                           ^                           ;/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp:6:29: error: reference to overloaded function could not be resolved; did you mean to call it?    std::cout << "test bar" std::endl;                            ^~~~~~~~~In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:9:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:40:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/istream:156:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ostream:1188:1: note: possible target for callendl(basic_ostream<_CharT, _Traits>& __os)^4 errors generated.4(36%IDEClangDiagnosticActivityLogMessage2@29"Expected ';' after expression-429974883#18446744073709551615#0#1(2@100"In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:10:-429974883#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@81"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp0000000000000000^9#9#9#9#164#0#21"Apple LLVM 5.1 Notice--2#27"com.apple.dt.IDE.diagnostic3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp0000000000000000^5#27#5#27#66#0#11"Parse Issue1(3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp0000000000000000^5#27#5#27#66#0#-2@80"Reference to overloaded function could not be resolved; did you mean to call it?-429974883#18446744073709551615#0#2(2@100"In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:10:-429974883#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@81"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp0000000000000000^9#9#9#9#164#0#21"Apple LLVM 5.1 Notice--2@24"Possible target for call-429974883#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@108"file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/c++/v1/ostream0000000000000000^1187#0#1187#0#35730#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp0000000000000000^5#28#5#28#67#0#14"Semantic Issue1(3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/FooTest.hpp0000000000000000^5#28#5#37#67#5#-2@29"Expected ';' after expression-429974883#18446744073709551615#0#1(2@100"In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:11:-429974883#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@81"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp0000000000000000^10#9#10#9#187#0#21"Apple LLVM 5.1 Notice--2#27"com.apple.dt.IDE.diagnostic3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp0000000000000000^5#27#5#27#66#0#11"Parse Issue1(3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp0000000000000000^5#27#5#27#66#0#-2@80"Reference to overloaded function could not be resolved; did you mean to call it?-429974883#18446744073709551615#0#2(2@100"In file included from /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp:11:-429974883#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@81"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp0000000000000000^10#9#10#9#187#0#21"Apple LLVM 5.1 Notice--2@24"Possible target for call-429974883#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@108"file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/c++/v1/ostream0000000000000000^1187#0#1187#0#35730#0#14"Semantic Issue--2#27"com.apple.dt.IDE.diagnostic3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp0000000000000000^5#28#5#28#67#0#14"Semantic Issue1(3@84"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/BarTest.hpp0000000000000000^5#28#5#37#67#5#-0#0#1#-19%DVTDocumentLocation4@81"file:///Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp0000000000000000^3047"CompileC build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o UnitTest/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/user/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DLUA_COMPAT_ALL -DLUA_USE_MACOSX -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/UnitTest-generated-files.hmap -I/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/UnitTest-own-target-headers.hmap -I/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/UnitTest-all-target-headers.hmap -iquote /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/UnitTest-project-headers.hmap -I/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/DerivedSources/x86_64 -I/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/DerivedSources -F/Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Debug -MMD -MT dependencies -MF /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.dia -c /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/UnitTest/main.cpp -o /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTest.build/Objects-normal/x86_64/main.o36"A31CC8C3-D6F2-4F56-9ABC-296C6F4CE918-
+bFEBAA8D5-A0E8-4589-8B59-1E705277C908
+
+CLd /Users/user/Workspace/Other/caff/Projects/XCode/Caffeine/build/Debug/UnitTest normal x86_64
+r0
+

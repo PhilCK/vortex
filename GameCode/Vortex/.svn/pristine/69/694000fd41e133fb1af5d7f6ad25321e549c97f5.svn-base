@@ -1,0 +1,89 @@
+
+
+class ShipModel : GameComponent
+{
+	// ** Model Getters ** //
+
+	bool isAlive() const { return m_currentHealthParam > 0; }
+	bool isDead() const  { return !isAlive();  				}
+
+
+
+	// ** Model Setters ** Please only access via controller ** //
+
+	void turnShip(const float amount)
+	{
+		m_turnShip = amount;
+	}
+
+
+
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		// Check required components exist.
+		getVortexTransform();
+	}
+
+
+
+	private void onParams(const Param &in params) override
+	{
+		m_maxHealthParam 	 	= params["max_health"].asUInt(m_maxHealthParam);
+		m_currentHealthParam	= params["current_health"].asUInt(m_maxHealthParam);
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		// Turn the player around the tunnel.
+		{
+			const float moveAmount = m_turnShip * dt;
+
+			if(moveAmount != 0)
+			{
+				const float angle = getVortexTransform().getAngle() + moveAmount;
+				getVortexTransform().setAngle(angle);
+
+				const uint playerMoveID = getOwner().getEventManager().getEventID("PlayerMove");
+				getOwner().getEventManager().sendInstantEvent(playerMoveID, moveAmount, angle);
+			}
+
+			m_turnShip = 0;
+		}
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private VortexTransform@ getVortexTransform()
+	{
+		if(m_vortexTransform is null)
+		{
+			@m_vortexTransform = @getOwner().getComponent("VortexTransform");
+
+			if(m_vortexTransform is null)
+			{
+				Print("ShipPlayerController: Failed to find vortex-transform");
+				return null;
+			}
+		}
+
+		return m_vortexTransform;
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 				m_currentHealthParam 	= 10;
+	private uint				m_maxHealthParam		= 10;
+
+	private float 				m_turnShip 				= 0.f;
+	private VortexTransform 	@m_vortexTransform 		= null;
+
+
+};

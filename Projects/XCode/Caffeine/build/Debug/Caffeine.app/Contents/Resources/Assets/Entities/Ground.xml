@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+
+	<name>Ground</name>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Physics</name>
+		</component>
+
+		<!-- MVC Components -->
+
+		<component>
+			<name>GroundModel</name>
+		</component>
+
+		<component>
+			<name>GroundView</name>
+			<params>
+				<texture_id>DevGrid</texture_id>
+			</params>
+		</component>
+
+		<component>
+			<name>GroundController</name>
+		</component>
+
+	</components>
+
+</entity>

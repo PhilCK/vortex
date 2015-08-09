@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+	<!-- This is just me thinking it through -->
+
+	<name>DailyChallange</name>
+	<version>0</version>
+	<expires>0</expires>
+
+	<challange>
+		<name>Grid Lock</name>
+
+		<load>
+			<event>
+				<id>CREATE_GAME</id>
+			</event>
+			
+			<event>
+				<id>LOAD_HIGHWAY</id>
+				<data_1>NO_CHANGE</data_1>
+				<data_2>GRID_LOCK</data_2>
+			</event>
+
+			<event>
+				<id>CREATE_ENTITY</id>
+				<data_1>TOP_UP_TIMER</data_1>
+				<data_2>BIKE_ACTION_CUT_UP_TOP_UP</data_2>
+			</event>
+
+		</load>
+	</challange>
+
+</config>

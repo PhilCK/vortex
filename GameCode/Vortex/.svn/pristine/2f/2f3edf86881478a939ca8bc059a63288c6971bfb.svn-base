@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GameCamera -->
+
+<entity>
+	
+	<name>GameCamera</name>
+	<tags>camera</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<!-- MVC -->
+
+		<component>
+			<name>CameraGameModel</name>
+		</component>
+
+		<!--
+		<component>
+			<name>CameraGameView</name>
+			<params>
+				<shader>CameraPost.shd</shader>
+				<distortion_factor>10</distortion_factor>
+			</params>
+		</component>
+		-->
+	
+		<component>
+			<name>CameraGameController</name>
+			<params>
+				<center_on_tags>player</center_on_tags>
+				<max_distance>10</max_distance>
+				<min_distance>1</min_distance>
+				<speed>10</speed>
+			</params>
+		</component>
+
+		<!-- Other -->
+
+		<component>
+			<name>Camera</name>
+		</component>
+
+	</components>
+
+</entity>

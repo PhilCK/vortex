@@ -1,0 +1,77 @@
+
+/*
+	CameraGameController
+	--
+	Tracks the info that its interested in for the game camera.
+	This is currently only one player.
+	If more objects are needed to be tracked then it will be updated.
+*/
+class CameraGameController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		registerForEvent(getOwner().getEventManager().getEventID("PlayerShipSpawn"));
+		registerForEvent(getOwner().getEventManager().getEventID("PlayerShipMove"));
+	}
+
+
+	
+	private void onThink(const float dt) override
+	{
+		// If we are tracking more than one ship we can set the target position here, rather than onEvent().
+	}
+
+
+
+	private bool onEvent(const Event &in data)
+	{
+		const uint playerMoveID = getOwner().getEventManager().getEventID("PlayerShipMove");
+
+		// Currently only watching one ship the player. so set target position based on that.
+		if(data.getID() == playerMoveID)
+		{
+			
+			Math::Vec3 pos = data.at(ShipMoveEvent::POSITION).asVec3();
+			getModel().setTargetPosition(pos);
+		}
+
+
+		const uint playerSpawnID = getOwner().getEventManager().getEventID("PlayerShipSpawn");
+
+		// Currently only watching one ship the player. so set target position based on that.
+		if(data.getID() == playerSpawnID)
+		{
+			Math::Vec3 pos = data.at(ShipSpawnEvent::POSITION).asVec3();
+			getModel().setTargetPosition(pos);
+		}
+
+		return false;
+	}
+
+
+
+	// ** Comp Helpers ** //
+
+	private CameraGameModel@ getModel()
+	{
+		if(m_model is null)
+		{
+			@m_model = @getOwner().getComponent("CameraGameModel");
+
+			if(m_model is null)
+			{
+				Print("CameraGameController: Failed to find model");
+				return null;
+			}
+		}
+
+		return m_model;
+	}
+
+
+	// ** Member Vars ** //
+
+	private CameraGameModel 	@m_model 			= null;
+};

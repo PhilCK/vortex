@@ -1,0 +1,127 @@
+/*
+	PowerPlantView
+	--
+	Displays a power plant.
+*/
+
+
+class PowerPlantView : GameComponent
+{
+
+
+	PowerPlantView()
+	{
+		@m_powerPlantModel 	= null;
+
+		m_shaderName  		= "FullBright.shd";
+		m_textureName 		= "dev_orange_grid.png";
+		m_modelName   		= "power_station.obj";
+
+		m_shaderID 			= 0;
+		m_vertexFmtID 		= 0;
+		m_vertexBufferID 	= 0;
+		m_indexBufferID 	= 0;
+	}
+
+
+
+	void onParams(const Param &in params) override
+	{
+		m_shaderName 	= params["shader_name"].asString(m_shaderName);
+		m_textureName 	= params["texture_name"].asString(m_textureName);
+		m_modelName 	= params["model_name"].asString(m_modelName);
+	}
+
+
+
+	void onStart() override
+	{
+		if(getOwner() !is null)
+		{
+			// Get Model
+			{
+				@m_powerPlantModel = getOwner().getComponent("PowerPlantModel");
+
+				if(m_powerPlantModel is null)
+				{
+					Print("Can't find Power Plant Model.");
+				}
+			}
+
+			// Load Shader
+			{
+				m_shaderID = getOwner().getRenderer().addShader(m_shaderName);
+
+				if(m_shaderID == 0)
+				{
+					Print("Couldn't load shader");
+				}
+			}
+
+			// Load Vert Fmt
+			{
+				array<FormatDesc> vertFmt = {
+					{"inPosition", 	AttrFormat::FLOAT, 3},
+					{"inTexC", 		AttrFormat::FLOAT, 2},
+					{"inNormal",	AttrFormat::FLOAT, 3}
+				};
+
+				m_vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+				if(m_vertexFmtID == 0)
+				{
+					Print("Couldn't load vertex format");
+				}
+			}
+
+			// Load Model
+			{
+
+			}
+
+			// Texture
+			{
+				m_textureID = getOwner().getRenderer().addTexture(m_textureName);
+
+				if(m_textureID == 0)
+				{
+					Print("Couldn't load texture!");
+				}
+			}
+		}
+	}
+
+
+
+	void onRender() override
+	{
+		// If no owner then return.
+		if(getOwner() !is null)
+		{
+			return;
+		}
+
+		Renderer @renderer = getOwner().getRenderer();
+
+		if(renderer is null)
+		{
+			renderer.reset();
+		}
+	}
+
+
+
+	// ** MEMBER VARS ** //
+
+	private PowerPlantModel 	@m_powerPlantModel;
+
+	private string 				m_shaderName;
+	private string 				m_textureName;	
+	private string  			m_modelName;
+
+	private uint 				m_shaderID;
+	private uint 				m_vertexFmtID;
+	private uint 				m_vertexBufferID;
+	private uint 				m_indexBufferID;
+
+}; // class

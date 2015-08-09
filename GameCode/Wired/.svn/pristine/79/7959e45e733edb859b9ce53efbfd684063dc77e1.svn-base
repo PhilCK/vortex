@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- TestGame -->
+
+<state>
+	
+	<name>MainState</name>
+
+	<!-- State setup -->
+	<setup>
+	</setup>
+
+	<on_create>
+
+		<instantiate_entity>
+			<name>Player</name>
+		</instantiate_entity>		
+		
+		<instantiate_entity>
+			<name>DebugGround</name>
+		</instantiate_entity>
+
+		<instantiate_entity>
+			<name>FreeCamera</name>
+		</instantiate_entity>
+
+	</on_create>
+
+</state>

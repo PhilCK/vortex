@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- BuildingBlock -->
+
+<entity>
+	
+	<name>BuildingBlock</name>
+	<tags>block glueable</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<position>3 2 3</position>
+			</params>
+		</component>
+
+		<component>
+			<name>Rigidbody</name>
+			<params>
+				<mass>2</mass>
+			</params>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Cube</name>
+					<extents>0.25</extents>
+				</type>
+			</params>
+		</component>
+
+		<!-- MVC -->
+
+<!-- 		<component>
+			<name>BuildingBlockModel</name>
+		</component>
+
+		<component>
+			<name>BuildingBlockView</name>
+		</component>
+
+		<component>
+			<name>BuildingBlockController</name>
+		</component> -->
+
+		<!-- Other -->
+
+		<component>
+			<name>Glueable</name>
+		</component>
+	
+	</components>
+
+</entity>

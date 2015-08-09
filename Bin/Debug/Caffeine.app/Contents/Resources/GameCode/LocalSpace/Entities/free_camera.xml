@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GameCamera -->
+
+<entity>
+	
+	<name>FreeCamera</name>
+	<tags>free_camera debug camera</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<position>0 5 10</position>
+			</params>
+		</component>
+
+		<component>
+			<name>Camera</name>
+		</component>
+
+		<component>
+			<name>FreeCameraController</name>
+			<params>
+				<yaw>0</yaw>
+				<pitch>0</pitch>
+				<sprint_multiplier>2</sprint_multiplier>
+				<mouse_sensitivity>0.3</mouse_sensitivity>
+			</params>
+		</component>
+
+	</components>
+
+</entity>

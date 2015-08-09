@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3C726988-F542-4BD5-824B-F4E2C970E827}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Caffeine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Caffeine.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Caffeine.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncDir)BulletPhysics\src\;$(IncDir)AngelScript\;$(IncDir)SDL\;$(IncDir);$(CodeDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(IncDir)SDL\Win32\;$(IncDir)BulletPhysics\Windows\Debug\;$(IncDir)AngelScript\Windows\Debug\;$(IncDir)GL\Win32\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)..\..\..\Bin\$(Configuration)\</OutDir>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncDir)BulletPhysics\src\;$(IncDir)AngelScript\;$(IncDir)SDL\;$(IncDir);$(CodeDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(IncDir)SDL\Win32\;$(IncDir)BulletPhysics\Windows\Release\;$(IncDir)AngelScript\Windows\Release\;$(IncDir)GL\Win32\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>BulletCollision_Debug.lib;BulletDynamics_Debug.lib;BulletFileLoader_Debug.lib;BulletMultiThreaded_Debug.lib;BulletSoftBody_Debug.lib;BulletSoftBodySolvers_OpenCL_Mini_Debug.lib;BulletWorldImporter_Debug.lib;BulletXmlWorldImporter_Debug.lib;ConvexDecomposition_Debug.lib;LinearMath_Debug.lib;MiniCL_Debug.lib;sdl2.lib;sdl2main.lib;glew32.lib;opengl32.lib;angelscriptd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /C $(IncDir)SDL\Win32\SDL2.dll  $(OutDir)
+xcopy /y /C $(IncDir)GL\Win32\glew32.dll $(OutDir)
+xcopy $(GameCodeDir)*.* $(OutDir)GameCode\ /Y /I /E /D /C
+xcopy $(AppAssetDir)*.* $(OutDir)AppAssets\ /Y /I /E /D /C</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>BulletCollision.lib;BulletDynamics.lib;BulletFileLoader.lib;BulletMultiThreaded.lib;BulletSoftBody.lib;BulletSoftBodySolvers_OpenCL_Mini.lib;BulletWorldImporter.lib;BulletXmlWorldImporter.lib;ConvexDecomposition.lib;LinearMath.lib;MiniCL.lib;sdl2.lib;sdl2main.lib;glew32.lib;opengl32.lib;angelscript.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /C $(IncDir)SDL\Win32\SDL2.dll  $(OutDir)
+xcopy /y /C $(IncDir)GL\Win32\glew32.dll $(OutDir)
+xcopy $(GameCodeDir)*.* $(OutDir)GameCode\ /Y /I /E /D /C
+xcopy $(AppAssetDir)*.* $(OutDir)AppAssets\ /Y /I /E /D /C</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Code\Application\Main.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Application.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Input.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Model.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Renderer.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Application\Window.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\CameraComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\ColliderComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\InputComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\LightComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\MaterialComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\ModelComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\PhysicsComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\RenderableComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\StorageComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Components\TransformComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Entity\Component.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Entity\Entity.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Interface\ScriptComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Interface\ScriptState.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Math\Math.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffAppGlue.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffCompGlue.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffMathGlue.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffSysGlue.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Scriptables\CaffUtilGlue.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\CaffeineMain.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\CameraManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\DebugRenderer.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\EntityFactory.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\Event.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\EventManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\Loader.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\ModelManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\PhysicsDebugRenderer.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\PhysicsManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\PropertyManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\ScriptManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\State.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\StateSystem.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\TextRenderer.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Systems\TextureManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\AnyData.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Directories.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Logging.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Param.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\ParamNode.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\SimpleCam.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\StringHelpers.cpp" />
+    <ClCompile Include="..\..\..\Code\Caffeine\Utilities\Timer.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\contextmgr\contextmgr.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\debugger\debugger.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptany\scriptany.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptarray\scriptarray.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptbuilder\scriptbuilder.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptdictionary\scriptdictionary.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptfile\scriptfile.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptgrid\scriptgrid.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scripthandle\scripthandle.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scripthelper\scripthelper.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmath.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmathcomplex.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptstdstring\scriptstdstring.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\scriptstdstring\scriptstdstring_utils.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\serializer\serializer.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\AngelScript\add_on\weakref\weakref.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\ASHelper.cpp" />
+    <ClCompile Include="..\..\..\Code\Includes\Dirent\dirent.c" />
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\image_DXT.c" />
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\image_helper.c" />
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\SOIL.c" />
+    <ClCompile Include="..\..\..\Code\Includes\SOIL\stb_image_aug.c" />
+    <ClCompile Include="..\..\..\Code\Includes\SQLite\sqlite3.c" />
+    <ClCompile Include="..\..\..\Code\Includes\tinyxml2\tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Application.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\ApplicationFwd.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Input.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Model.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Renderer.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Application\Window.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Caffeine.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\CameraComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\ColliderComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\ComponentsFwd.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\InputComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\LightComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\MaterialComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\ModelComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\PhysicsComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\RenderableComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\StorageComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Components\TransformComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Entity\Component.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Entity\Entity.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Entity\EntityFwd.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Interface\ScriptComponent.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Interface\ScriptState.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Lib\Array.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Lib\String.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\DebugVector.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Math.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Matrix.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Quaternion.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Math\Vector.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Platform.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffAppGlue.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffCompGlue.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffMathGlue.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffSysGlue.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Scriptables\CaffUtilGlue.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\CaffeineMain.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\CameraManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\DebugRenderer.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\EntityFactory.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\Event.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\EventManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\Loader.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\ModelManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\PhysicsDebugRenderer.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\PhysicsManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\PropertyManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\ScriptManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\State.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\StateSystem.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\SystemFwd.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\TextRenderer.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Systems\TextureManager.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\AnyData.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\Directories.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\Logging.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\NonCopyable.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\param.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\ParamNode.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\SimpleCam.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\StringHelpers.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\Timer.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Utilities\UtilitiesFwd.hpp" />
+    <ClInclude Include="..\..\..\Code\Caffeine\Version.hpp" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\autowrapper\aswrappedcall.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\contextmgr\contextmgr.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\debugger\debugger.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptany\scriptany.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptarray\scriptarray.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptbuilder\scriptbuilder.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptdictionary\scriptdictionary.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptfile\scriptfile.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptgrid\scriptgrid.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scripthandle\scripthandle.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scripthelper\scripthelper.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmath.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptmath\scriptmathcomplex.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\scriptstdstring\scriptstdstring.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\serializer\serializer.h" />
+    <ClInclude Include="..\..\..\Code\Includes\AngelScript\add_on\weakref\weakref.h" />
+    <ClInclude Include="..\..\..\Code\Includes\ASHelper.hpp" />
+    <ClInclude Include="..\..\..\Code\Includes\Dirent\dirent.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\image_DXT.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\image_helper.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\SOIL.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\stbi_DDS_aug.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\stbi_DDS_aug_c.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SOIL\stb_image_aug.h" />
+    <ClInclude Include="..\..\..\Code\Includes\SQLite\sqlite3.h" />
+    <ClInclude Include="..\..\..\Code\Includes\tinyxml2\tinyxml2.h" />
+    <ClInclude Include="..\..\..\Code\Includes\UnitTest.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Code\Caffeine\Systems\Readme.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

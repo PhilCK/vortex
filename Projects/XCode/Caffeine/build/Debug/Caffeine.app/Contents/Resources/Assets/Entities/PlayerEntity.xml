@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+
+	<name>Player</name>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Physics</name>
+		</component>
+
+		<!-- MVC Components -->
+
+		<component>
+			<name>PlayerModel</name>
+		</component>
+
+		<component>
+			<name>PlayerView</name>
+		</component>
+
+		<component>
+			<name>PlayerController</name>
+		</component>
+
+	</components>
+
+</entity>

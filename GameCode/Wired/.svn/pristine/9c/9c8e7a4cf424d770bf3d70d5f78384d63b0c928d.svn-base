@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Settings.xml is not read by default, it is part of systems. -->
+<settings>
+	
+	<!-- Application - basic app settings -->
+	<application>
+		
+		<!-- Window Settings -->
+		<window>
+			<width>1280</width>
+			<height>720</height>
+			<fullscreen>false</fullscreen>
+			<title>Caffeine</title>
+		</window>
+		
+		<!-- Renderer Settings -->
+		<renderer>
+			<width>1280</width>
+			<height>720</height>
+			
+			<v_sync>true</v_sync>
+			
+			<depth_bits>24</depth_bits>
+			
+			<color_buffer>
+				<red_bits>3</red_bits>
+				<green_bits>3</green_bits>
+				<blue_bits>2</blue_bits>
+				<alpha_bits>0</alpha_bits>
+			</color_buffer>
+		</renderer>
+		
+	</application>
+	
+	
+	<!-- Asset Directories - directories for loading etc. -->
+	<systems>
+		
+		<!--
+			<type_dir>
+				<dir_name>Dir</dir_name> - Relitive to settings.xml (no trailing slash).
+				<hot>true/false</hot>	 - If the dir is hot loading on changes or not.
+				<auto>true/false</auto>  - If the asset loads automatically on start up.
+				<ext>xml</ext>			 - Extension of the xml information.
+			</type_dir>
+			
+			NOTE: Assets can be combined into the same directory as long as they have different extensions.
+		-->	
+		
+		<entity_dir>
+			<dir_name>Assets/Entities/</dir_name>
+			<hot>true</hot>
+			<auto>true</auto>
+			<ext>xml</ext>
+		</entity_dir>
+		
+		<model_dir>
+			<dir_name>Assets/Models/</dir_name>
+			<hot>true</hot>
+			<auto>true</auto>
+			<ext>xml</ext>
+		</model_dir>
+		
+		<shader_dir>
+			<dir_name>Assets/Shaders/</dir_name>
+			<hot>true</hot>
+			<auto>true</auto>
+			<ext>xml</ext>
+		</shader_dir>
+		
+		<texture_dir>
+			<dir_name>Assets/Textures/</dir_name>
+			<hot>true</hot>
+			<auto>true</auto>
+			<ext>xml</ext>
+		</texture_dir>
+		
+	</systems>
+
+</settings>

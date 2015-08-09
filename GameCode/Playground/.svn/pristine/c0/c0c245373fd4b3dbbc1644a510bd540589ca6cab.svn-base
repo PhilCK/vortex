@@ -1,0 +1,78 @@
+
+/*
+	VortexPhysics
+	--
+	We only use the physics engine for collision detection. There is no real physics in here.
+*/
+class CharacterController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onAttach() override
+	{
+	}
+
+
+
+	private void onParams(const Param &in params) override
+	{
+		getOwner().getInput().setHoldMouse(true);
+	}
+
+
+
+	private void onStart() override
+	{
+		TransformComponent @transform = getOwner().getComponent("Transform");
+
+		if(transform is null)
+		{
+			Util::LogWarning("CharacterController: Transform not found.");
+		}
+	}
+
+
+
+	private void onThink(const float dt) override
+	{
+		TransformComponent @transform 	= getOwner().getComponent("Transform");
+		Input @input 					= getOwner().getInput();
+
+		if(transform !is null)
+		{
+			// Rotation
+			{
+				const float dx = input.getMouseDeltaX();
+
+				Math::Vec3 rot = transform.getRotation();
+				rot.y = rot.y + (10.f * dt);
+
+				transform.setRotation(rot);
+			}
+
+			// Position
+			{
+				Math::Vec3 move = {0,0,0};
+				const float moveSpeed = 10.f * dt;
+
+				if(input.isDown(Input::KB_W))
+				{
+					move.z += moveSpeed;
+				}
+
+				Math::Vec3 position = transform.getPosition();
+
+				position.add(move);
+
+				transform.setPosition(position);
+			}
+		}
+	}
+
+
+
+	// ** Member Vars ** //
+
+
+
+};

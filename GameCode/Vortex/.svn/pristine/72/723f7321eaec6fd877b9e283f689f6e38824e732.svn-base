@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Player -->
+
+<entity>
+	
+	<name>Player</name>
+	<tags>player ship</tags>
+
+	<components>
+
+		<!-- Transform and Physics -->
+
+		<component>
+			<name>VortexTransform</name>
+		</component>
+
+		<component>
+			<name>VortexPhysics</name>
+		</component>		
+
+		<!-- MVC -->
+
+		<component>
+			<name>ShipModel</name>
+			<params>
+				<max_health>10</max_health>
+				<current_health>10</current_health>
+				<speed>10</speed>
+			</params>
+		</component>
+
+		<component>
+			<name>ShipView</name>
+			<params>
+				<model>player</model>
+			</params>
+		</component>
+
+		<component>
+			<name>ShipPlayerController</name>
+		</component>
+
+		<!-- Others -->
+
+		<component>
+			<name>WeaponSystem</name>
+			<params>
+				<default>plasma</default>
+			</params>
+		</component>
+
+		<component>
+			<name>PowerUpSystem</name>
+		</component>
+
+	</component>
+
+	<!-- Sub Entities -->
+
+	<children>
+
+		<entity>
+
+			<name>PlayerHUD</name>
+			<tag>HUD</tag>
+
+			<components>
+
+				<!-- Transform -->
+
+				<component>
+					<name>GUITransform</name>
+				</component>
+
+				<!-- MVC -->
+
+				<component>
+					<name>GUIPlayerModel</name>
+				</component>
+
+				<component>
+					<name>GUIPlayerView</name>
+				</component>
+
+				<component>
+					<name>GUIPlayerController</name>
+				</component>				
+
+			</components>
+
+		</entity>
+
+	</children>
+		
+</entity>

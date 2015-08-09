@@ -1,0 +1,9 @@
+Info: State - Instantiated entity "GameController".
+Info: State - Instantiated entity "GameCamera".
+Info: State - Instantiated entity "Level".
+Info: State - Instantiated entity "GameControllers".
+Info: State - Instantiated entity "Player".
+Info: State - Instantiated entity "EnemyShip".
+Warning: State - Entity container running out of space 10, next push will cause reallocation.
+Warning: State - Entity container running out of space 20, next push will cause reallocation.
+Warning: State - Entity container running out of space 40, next push will cause reallocation.

@@ -1,0 +1,143 @@
+# Compiler Settings
+CC		= "clang++"
+IDIR	= "-I../../Includes -I../../"
+FLAGS 	= "-Wall -Wpedantic -Wno-gnu -Wno-nested-anon-types"
+EXTRA 	= "-DCAFF_UNIT_TEST -std=c++11 -stdlib=libc++"
+OUT 	= "UnitTest"
+
+CAFF_DIR 		= "../../Caffeine/"
+OTHER_INC_DIR 	= "../../Includes/"
+CAFF_UTILS      = CAFF_DIR + "Utilities/"
+CAFF_MATH       = CAFF_DIR + "Math/"
+
+
+desc "Run all the unit tests."
+task :all_tests do |t, args|
+
+	tests = [
+		:any_data_test,
+		:state_test
+	]
+
+	tests.each do |t|
+		Rake::Task[t].invoke
+	end
+
+end
+
+
+
+# Helper task that compiles and runs the unit test.
+task :compile, :unit_test, :files do |t, args|
+
+	test_file   = args[:unit_test]
+	input_files = args[:files]
+
+	# Build the test.
+	system "echo Compiling Test ..."
+	system "#{CC} #{IDIR} #{FLAGS} #{EXTRA} #{input_files} #{test_file} -o #{OUT}"
+	system "./#{OUT}"
+
+	Rake::Task[:compile].reenable
+
+end
+
+desc "Any Test"
+task :any_test do |t, args|
+
+	unit_test = "AnyTest.cpp"
+	files 	  = ""
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+
+desc "QuickTest is just for code splats"
+task :quick_test do |t, args|
+
+	Rake::Task[:compile].invoke("QuickTest.cpp", "")
+
+end
+
+
+desc "TransformComponent Test"
+task :transform_test do |t, args|
+
+	unit_test = "TransformTest.cpp"
+	files 	  = ""
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+desc "Param Test"
+task :param_test do |t, args|
+
+	unit_test = "ParamTest.cpp"
+	files 	  = "#{CAFF_UTILS}Param.cpp #{OTHER_INC_DIR}tinyxml2/tinyxml2.cpp"
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+desc "State test"
+task :state_test do |t, args|
+
+	unit_test = "StateTest.cpp"
+	files 	  = "#{CAFF_UTILS}AnyData.cpp #{CAFF_UTILS}StringHelpers.cpp"
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+desc "Any Data test"
+task :any_data_test do |t, args|
+
+	unit_test = "AnyDataTest.cpp"
+	files 	  = "#{CAFF_UTILS}AnyData.cpp #{CAFF_UTILS}StringHelpers.cpp"
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+### Math Tests
+
+
+desc "Quaternion Test"
+task :quaternion_test do |t, args|
+
+	unit_test = "QuaternionTest.cpp"
+	files     = ""
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+desc "Vector Test"
+task :vector_test do |t, args|
+
+	unit_test = "VectorTest.cpp"
+	files     = ""
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+
+
+desc "ObserverPtr Test"
+task :observer_test do |t, args|
+
+	unit_test = "ObserverPtrTest.cpp"
+	files     = ""
+
+	Rake::Task[:compile].invoke(unit_test, files)
+
+end
+

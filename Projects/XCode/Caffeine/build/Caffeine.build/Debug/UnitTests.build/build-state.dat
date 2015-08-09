@@ -1,0 +1,397 @@
+TUnitTests
+v6
+r1
+cCheck dependencies
+cCompileC build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/UnitTests normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c000000005243E79F00000000000000AA
+t1380181919
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c0000000052875691000000000000044C
+t1384601233
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c000000005287569100000000000001DB
+t1384601233
+s475
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+c0000000052875699000000000000681C
+t1384601241
+s26652
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+c0000000052875699000000000006E8B0
+t1384601241
+s452784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+c00000000528756990000000000004734
+t1384601241
+s18228
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+c0000000052875699000000000000FC6C
+t1384601241
+s64620
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+c0000000052875699000000000000F6A0
+t1384601241
+s63136
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+c00000000528756990000000000006254
+t1384601241
+s25172
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+c0000000052875699000000000000E0F8
+t1384601241
+s57592
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+c0000000052875699000000000000D6DC
+t1384601241
+s55004
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+c00000000528756990000000000006308
+t1384601241
+s25352
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+c00000000528756990000000000004050
+t1384601241
+s16464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+c00000000528756990000000000008570
+t1384601241
+s34160
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+c00000000528756990000000000005EA0
+t1384601241
+s24224
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+c00000000528756990000000000005FAC
+t1384601241
+s24492
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+c00000000528756990000000000004440
+t1384601241
+s17472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+c0000000052875699000000000000AA28
+t1384601241
+s43560
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+c000000005219501B0000000000003E2C
+t1377390619
+s15916
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+c00000000528756990000000000030A24
+t1384601241
+s199204
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+c00000000521951950000000000005E54
+t1377390997
+s24148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+c00000000528756990000000000006A90
+t1384601241
+s27280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+c000000005287569900000000000178AC
+t1384601241
+s96428
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+c0000000052875699000000000001ADC8
+t1384601241
+s110024
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+c0000000052875699000000000001028C
+t1384601241
+s66188
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+c00000000528756990000000000008800
+t1384601241
+s34816
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+c00000000528756990000000000011090
+t1384601241
+s69776
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+c0000000052875699000000000000882C
+t1384601241
+s34860
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+c000000005287569900000000000067AC
+t1384601241
+s26540
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+c00000000528756990000000000008DEC
+t1384601241
+s36332
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+c00000000528756990000000000004C08
+t1384601241
+s19464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+c000000005287569900000000000023C0
+t1384601241
+s9152
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+c0000000052875699000000000000439C
+t1384601241
+s17308
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+c00000000528756990000000000006768
+t1384601241
+s26472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+c000000005287569900000000000172F4
+t1384601241
+s94964
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.osx.a
+c00000000528756C10000000000001750
+t1384601281
+s5968
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Components/ComponentsFwd.hpp
+c0000000052F774C600000000000001AC
+t1391948998
+s428
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Entity/Component.hpp
+c000000005337CF420000000000000713
+t1396166466
+s1811
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Entity/Entity.hpp
+c000000005337384500000000000017F0
+t1396127813
+s6128
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Entity/EntityFwd.hpp
+c0000000052F555B50000000000000110
+t1391809973
+s272
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Platform.hpp
+c00000000533F290100000000000008DD
+t1396648193
+s2269
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Systems/State.hpp
+c0000000053373C72000000000000076E
+t1396128882
+s1902
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Systems/StateSystem.hpp
+c0000000052F555B5000000000000088A
+t1391809973
+s2186
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Systems/SystemFwd.hpp
+c00000000533736DD000000000000029B
+t1396127453
+s667
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/StateTest.hpp
+c00000000533FB01E0000000000000EAD
+t1396682782
+s3757
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Utilities/NonCopyable.hpp
+c0000000052F555B500000000000001F7
+t1391809973
+s503
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Utilities/ParamNode.hpp
+c0000000052F555B50000000000000B66
+t1391809973
+s2918
+
+N/Users/PhilCK/Developer/terminal/Code/Caffeine/Utilities/UtilitiesFwd.hpp
+c0000000052F555B500000000000000C7
+t1391809973
+s199
+
+N/Users/PhilCK/Developer/terminal/Code/Includes/UnitTest.hpp
+c0000000052F555AF0000000000001A97
+t1391809967
+s6807
+
+N/Users/PhilCK/Developer/terminal/Code/Includes/tinyxml2/tinyxml2.h
+c0000000052F555B0000000000000EA1E
+t1391809968
+s59934
+
+N/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp
+c00000000533F2A100000000000000184
+t1396648464
+s388
+
+N/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/UnitTests.LinkFileList
+c00000000533FAFA50000000000000081
+t1396682661
+s129
+
+N/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o
+t1396682870
+s494268
+
+N/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/UnitTests
+t2
+s0
+
+CBuild AST from /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies0e86760ce8efb841^62677e0ce8efb841^-453"warning: no rule to process file '/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/EntityTest.hpp' of type sourcecode.cpp.h for architecture x86_64warning: no rule to process file '/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/MathTest.hpp' of type sourcecode.cpp.h for architecture x86_64warning: no rule to process file '/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/StateTest.hpp' of type sourcecode.cpp.h for architecture x86_643(21%IDEActivityLogMessage2@151"Warning: no rule to process file '/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/EntityTest.hpp' of type sourcecode.cpp.h for architecture x86_64-418375692#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--2@149"Warning: no rule to process file '/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/MathTest.hpp' of type sourcecode.cpp.h for architecture x86_64-418375692#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--2@150"Warning: no rule to process file '/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/StateTest.hpp' of type sourcecode.cpp.h for architecture x86_64-418375692#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--0#1#1#--18"Check dependencies36"4C47F438-D8B6-4CB5-8B97-3F503D236343-
+
+CCompileC build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s418375668.606238
+e418375670.367381
+r1
+xCompileC
+xbuild/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o
+x/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/StateTest.hpp
+d/Users/PhilCK/Developer/terminal/Code/Includes/UnitTest.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Systems/StateSystem.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Platform.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Systems/SystemFwd.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Utilities/NonCopyable.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Utilities/UtilitiesFwd.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Systems/State.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Entity/Entity.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Entity/EntityFwd.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Entity/Component.hpp
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Utilities/ParamNode.hpp
+d/Users/PhilCK/Developer/terminal/Code/Includes/tinyxml2/tinyxml2.h
+d/Users/PhilCK/Developer/terminal/Code/Caffeine/Components/ComponentsFwd.hpp
+oIn file included from /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp:15:
+o/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/../../../Code/Caffeine/Tests/StateTest.hpp:117:8: warning: unused variable 'foo' [-Wunused-variable]
+o                Foo *foo = static_cast<Foo*>(&stateMgr.topState());
+o                     ^
+o/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/../../../Code/Caffeine/Tests/StateTest.hpp:134:8: warning: unused variable 'bar' [-Wunused-variable]
+o                Bar *bar = static_cast<Bar*>(&stateMgr.topState());
+o                     ^
+o2 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp161"CompileC build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o UnitTests/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler6e509bf4e7efb841^9e0c5ef6e7efb841^-622"In file included from /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp:15:/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/../../../Code/Caffeine/Tests/StateTest.hpp:117:8: warning: unused variable 'foo' [-Wunused-variable]                Foo *foo = static_cast<Foo*>(&stateMgr.topState());                     ^/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/../../../Code/Caffeine/Tests/StateTest.hpp:134:8: warning: unused variable 'bar' [-Wunused-variable]                Bar *bar = static_cast<Bar*>(&stateMgr.topState());                     ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@21"Unused variable 'foo'-418375670#18446744073709551615#0#1(2@101"In file included from /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp:15:-418375670#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@82"file:///Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp0000000000000000^14#9#14#9#276#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@73"file:///Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/StateTest.hpp0000000000000000^116#7#116#7#2155#0#19"Unused Entity Issue--2@21"Unused variable 'bar'-418375670#18446744073709551615#0#1(2@101"In file included from /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp:15:-418375670#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@82"file:///Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp0000000000000000^14#9#14#9#276#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@73"file:///Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/StateTest.hpp0000000000000000^133#7#133#7#2547#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@82"file:///Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp0000000000000000^3208"CompileC build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o UnitTests/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DLUA_COMPAT_ALL -DLUA_USE_MACOSX -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/UnitTests-generated-files.hmap -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/UnitTests-own-target-headers.hmap -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/UnitTests-all-target-headers.hmap -iquote /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/UnitTests-project-headers.hmap -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/../../../Code -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/../../../Code/Includes -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/DerivedSources/x86_64 -I/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/DerivedSources -F/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug -MMD -MT dependencies -MF /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.dia -c /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/UnitTests/main.cpp -o /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o36"E46BFE53-03D9-488F-89ED-BD6E1A052EC7-
+b6C59FE4E-876F-46C9-99FC-0C0567E24139
+
+CLd /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/UnitTests normal x86_64
+s418375692.496089
+e418375692.535657
+r0
+xLd
+x/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/UnitTests
+xnormal
+xx86_64
+d/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/UnitTests.LinkFileList
+d/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/main.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+oUndefined symbols for architecture x86_64:
+o  "Caffeine::Entity::Entity::~Entity()", referenced from:
+o      std::__1::__vector_base<std::__1::unique_ptr<Caffeine::Entity::Entity, std::__1::default_delete<Caffeine::Entity::Entity> >, std::__1::allocator<std::__1::unique_ptr<Caffeine::Entity::Entity, std::__1::default_delete<Caffeine::Entity::Entity> > > >::~__vector_base() in main.o
+o  "Caffeine::Systems::StateManager::processPending()", referenced from:
+o      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o  "Caffeine::Systems::StateManager::pushState(std::__1::unique_ptr<Caffeine::Systems::State, std::__1::default_delete<Caffeine::Systems::State> >)", referenced from:
+o      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o  "Caffeine::Systems::StateManager::StateManager(bool)", referenced from:
+o      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o  "Caffeine::Systems::StateManager::~StateManager()", referenced from:
+o      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o
+o  "Caffeine::Systems::State::onThink(float)", referenced from:
+o      vtable for Boo in main.o
+o      vtable for Bar in main.o
+o      vtable for Foo in main.o
+o  "Caffeine::Systems::State::State(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned long)", referenced from:
+o      Boo::Boo() in main.o
+o      Bar::Bar() in main.o
+o      Foo::Foo() in main.o
+o  "typeinfo for Caffeine::Systems::State", referenced from:
+o      typeinfo for Boo in main.o
+o      typeinfo for Bar in main.o
+o      typeinfo for Foo in main.o
+o  "vtable for Caffeine::Systems::State", referenced from:
+o      Caffeine::Systems::State::~State() in main.o
+o  NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+old: symbol(s) not found for architecture x86_64
+oclang: error: linker command failed with exit code 1 (use -v to see invocation)
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Link /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/UnitTests38"Ld build/Debug/UnitTests normal x86_6484117f0ce8efb841^c020890ce8efb841^-2543"Undefined symbols for architecture x86_64:  "Caffeine::Entity::Entity::~Entity()", referenced from:      std::__1::__vector_base<std::__1::unique_ptr<Caffeine::Entity::Entity, std::__1::default_delete<Caffeine::Entity::Entity> >, std::__1::allocator<std::__1::unique_ptr<Caffeine::Entity::Entity, std::__1::default_delete<Caffeine::Entity::Entity> > > >::~__vector_base() in main.o  "Caffeine::Systems::StateManager::processPending()", referenced from:      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o  "Caffeine::Systems::StateManager::pushState(std::__1::unique_ptr<Caffeine::Systems::State, std::__1::default_delete<Caffeine::Systems::State> >)", referenced from:      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o  "Caffeine::Systems::StateManager::StateManager(bool)", referenced from:      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o  "Caffeine::Systems::StateManager::~StateManager()", referenced from:      TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o      TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o  "Caffeine::Systems::State::onThink(float)", referenced from:      vtable for Boo in main.o      vtable for Bar in main.o      vtable for Foo in main.o  "Caffeine::Systems::State::State(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned long)", referenced from:      Boo::Boo() in main.o      Bar::Bar() in main.o      Foo::Foo() in main.o  "typeinfo for Caffeine::Systems::State", referenced from:      typeinfo for Boo in main.o      typeinfo for Bar in main.o      typeinfo for Foo in main.o  "vtable for Caffeine::Systems::State", referenced from:      Caffeine::Systems::State::~State() in main.o  NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.ld: symbol(s) not found for architecture x86_64clang: error: linker command failed with exit code 1 (use -v to see invocation)31(21%IDEActivityLogMessage2@55""Caffeine::Entity::Entity::~Entity()", referenced from:-418375692#43#58#-2#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@276"Std::__1::__vector_base<std::__1::unique_ptr<Caffeine::Entity::Entity, std::__1::default_delete<Caffeine::Entity::Entity> >, std::__1::allocator<std::__1::unique_ptr<Caffeine::Entity::Entity, std::__1::default_delete<Caffeine::Entity::Entity> > > >::~__vector_base() in main.o-418375692#101#283#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@69""Caffeine::Systems::StateManager::processPending()", referenced from:-418375692#384#72#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@101"TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#456#108#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@106"TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#564#113#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@163""Caffeine::Systems::StateManager::pushState(std::__1::unique_ptr<Caffeine::Systems::State, std::__1::default_delete<Caffeine::Systems::State> >)", referenced from:-418375692#677#166#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@101"TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#843#108#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@106"TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#951#113#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@71""Caffeine::Systems::StateManager::StateManager(bool)", referenced from:-418375692#1064#74#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@101"TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#1138#108#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@106"TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#1246#113#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@68""Caffeine::Systems::StateManager::~StateManager()", referenced from:-418375692#1359#71#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@101"TestCreateAddState::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#1430#108#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@106"TestStatePushingPopping::run(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) const in main.o-418375692#1538#113#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@60""Caffeine::Systems::State::onThink(float)", referenced from:-418375692#1651#63#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@24"Vtable for Boo in main.o-418375692#1714#31#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@24"Vtable for Bar in main.o-418375692#1745#31#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@24"Vtable for Foo in main.o-418375692#1776#31#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@153""Caffeine::Systems::State::State(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned long)", referenced from:-418375692#1807#156#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@20"Boo::Boo() in main.o-418375692#1963#27#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@20"Bar::Bar() in main.o-418375692#1990#27#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@20"Foo::Foo() in main.o-418375692#2017#27#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@57""typeinfo for Caffeine::Systems::State", referenced from:-418375692#2044#60#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@26"Typeinfo for Boo in main.o-418375692#2104#33#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@26"Typeinfo for Bar in main.o-418375692#2137#33#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@26"Typeinfo for Foo in main.o-418375692#2170#33#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@55""vtable for Caffeine::Systems::State", referenced from:-418375692#2203#58#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@44"Caffeine::Systems::State::~State() in main.o-418375692#2261#51#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@94"A missing vtable usually means the first non-inline virtual member function has no definition.-418375692#2312#103#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@43"Symbol(s) not found for architecture x86_64-418375692#2415#48#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-418375692#2463#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#1#--972"Ld build/Debug/UnitTests normal x86_64    cd /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine    setenv MACOSX_DEPLOYMENT_TARGET 10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug -F/Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug -filelist /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/UnitTests.LinkFileList -mmacosx-version-min=10.9 -stdlib=libc++ -Xlinker -dependency_info -Xlinker /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Caffeine.build/Debug/UnitTests.build/Objects-normal/x86_64/UnitTests_dependency_info.dat -o /Users/PhilCK/Developer/terminal/Projects/XCode/Caffeine/build/Debug/UnitTests36"C89FB83C-C728-4F56-8AB7-078963350FF8-
+bCD5D54C4-2A58-4900-93B1-FBA094FBFD8D
+

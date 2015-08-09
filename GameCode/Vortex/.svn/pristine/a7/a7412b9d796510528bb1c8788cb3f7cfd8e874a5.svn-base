@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GameCamera -->
+
+<entity>
+	
+	<name>GameCamera</name>
+	<tags>camera</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<!-- MC -->
+
+		<component>
+			<name>CameraGameModel</name>
+		</component>
+
+		<component>
+			<name>CameraGameController</name>
+		</component>
+
+		<!-- Other -->
+		<component>
+			<name>Camera</name>
+		</component>
+
+	</components>
+
+</entity>

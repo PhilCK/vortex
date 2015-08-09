@@ -1,0 +1,123 @@
+
+Blinn Phong Shader
+------------------
+A directional lighting w/ blinn-phong lighting model.
+
+
+[VERTEXSHADER]
+
+#version 150 core
+
+in vec3 inPosition;
+in vec2 inTexC;
+in vec3 inNormal;
+
+uniform mat4 wMat;
+uniform mat4 wvpMat;
+
+uniform vec2 texScale = vec2(1, 1);
+uniform vec2 texOffset = vec2(0, 0);
+
+uniform vec3 vertScale = vec3(1, 1, 1);
+uniform vec4 color = vec4(1, 1, 1, 0);
+
+out vec3 vsPosition;
+out vec2 vsTexC;
+out vec3 vsNormal;
+
+void main()
+{
+	vec3 position = vec3(inPosition.x * vertScale.x, inPosition.y * vertScale.y, inPosition.z * vertScale.z);
+	gl_Position = wvpMat * vec4(position, 1.0);
+
+	vec4 worldPos = wMat * vec4(position, 1.0);
+	vsPosition = worldPos.xyz / worldPos.w;
+	
+	float u = (inTexC.x * texScale.x) + texOffset.x;
+	float v = (inTexC.y * texScale.y) + texOffset.y;
+	vsTexC = vec2(u, v);
+
+	//TODO: SLOW!!! Take this out of the shader!
+	mat4 nMat = transpose(inverse(wMat));
+	vsNormal = normalize(nMat * vec4(inNormal, 0.0)).xyz;
+}
+
+[/VERTEXSHADER]
+
+
+[PIXELSHADER]
+
+#version 150
+
+#define LIGHT_COUNT 7
+
+struct DirectionalLight
+{
+	vec3 direction;
+	vec3 color;
+};
+
+struct PointLight
+{
+	vec3 position;
+	vec3 color;
+
+	float radius;
+};
+
+in vec3 vsPosition;
+in vec2 vsTexC;
+in vec3 vsNormal;
+
+uniform sampler2D diffuseTex;
+
+uniform vec3 camPos;
+
+uniform DirectionalLight directionalLight;
+uniform PointLight pointLights[LIGHT_COUNT];
+
+uniform vec3 ambientLight = vec3(0.0, 0.0, 0.0);
+
+out vec4 outColor;
+
+float blinn_specular(vec3 n, vec3 l, vec3 v, vec3 h) {
+    return max(dot(n, l), 0.0) * pow(max(dot(n, h), 0.0), 16.0);
+}
+
+void main()
+{
+	vec3 n = normalize(vsNormal);
+	vec3 v = normalize(camPos - vsPosition);
+
+	vec3 diffuse = texture(diffuseTex, vsTexC).rgb;
+
+	vec3 color = diffuse * ambientLight;
+
+	{
+		vec3 l = normalize(-directionalLight.direction);
+		vec3 h = normalize(l + v);
+
+		float lambert = max(dot(n, l), 0.0);
+		float specular = blinn_specular(n, l, v, h);
+
+		color += directionalLight.color * (lambert * diffuse + specular);
+	}
+
+	for(int i = 0; i < LIGHT_COUNT; i++)
+	{
+		vec3 l = normalize(pointLights[i].position - vsPosition);
+		vec3 h = normalize(l + v);
+
+		float dist = distance(vsPosition, pointLights[i].position);
+		float atten = max(0.0, (pointLights[i].radius - dist) / pointLights[i].radius);
+
+		float lambert = max(dot(n, l), 0.0);
+		float specular = blinn_specular(n, l, v, h);
+
+		color += pointLights[i].color * (lambert * diffuse + specular) * atten;
+	}
+
+	outColor = vec4(color, 1.0);
+}
+
+[/PIXELSHADER]

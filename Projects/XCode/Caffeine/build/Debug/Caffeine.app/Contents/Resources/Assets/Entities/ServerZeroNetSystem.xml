@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+
+	<name>ServerZeroNetSystem</name>
+
+	<components>
+
+		<!-- MVC Components -->
+
+		<component>
+			<name>ComputerSystemModel</name>
+			<params>
+				<system_name>Zero Network</system_name>
+				<system_version>0342rc</system_version>
+				<system_motd> --- Hacker Network --- </system_motd>
+			</params>
+		</component>
+
+		<component>
+			<name>ComputerSystemController</name>
+		</component>
+
+	</components>
+
+</entity>

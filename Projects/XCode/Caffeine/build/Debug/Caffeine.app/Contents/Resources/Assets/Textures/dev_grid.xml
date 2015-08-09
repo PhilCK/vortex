@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture>
+	<name>dev_grid</name>
+	<filename>dev_grid_1024.png</filename>
+	<!-- eventually this will be diffuse/specular/normal etc -->
+</texture>

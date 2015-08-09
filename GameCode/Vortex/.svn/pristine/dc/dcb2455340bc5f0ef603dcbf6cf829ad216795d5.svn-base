@@ -1,0 +1,29 @@
+
+class ProjectileController : GameComponent
+{
+	// ** Engine Hooks ** //
+
+	private void onStart() override
+	{
+		// Reg for events
+		{
+			registerForEvent(getOwner().getEventManager().getEventID("PlayerShipDead"));
+		}
+	}
+
+
+
+	private bool onEvent(const Event &in data) override
+	{
+		// player died
+		const uint playerDiedID = getOwner().getEventManager().getEventID("PlayerShipDead");
+
+		if(data.getID() == playerDiedID)
+		{
+			getOwner().destroy();
+		}
+
+		return false;
+	}
+
+}; // class

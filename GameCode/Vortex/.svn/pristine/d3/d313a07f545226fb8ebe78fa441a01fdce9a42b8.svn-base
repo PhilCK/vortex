@@ -1,0 +1,113 @@
+
+class ProjectileView : GameComponent
+{
+
+	// ** Engine Hooks ** //
+
+	private void onParams(const Param &in params) override
+	{
+		m_shaderParam 	= params["shader_name"].asString(m_shaderParam);
+		m_textureParam 	= params["texture_name"].asString(m_textureParam);
+		m_modelParam    = params["model_name"].asString(m_modelParam);
+	}
+
+
+
+	private void onStart() override
+	{
+		// Load shader
+		{
+			m_shaderID = getOwner().getRenderer().addShader(m_shaderParam);
+
+			if(m_shaderID == 0)
+			{
+				Print("Couldn't load shader");
+			}
+		}
+
+		// Load Vert fmt
+		{
+			array<FormatDesc> vertFmt = {
+				{"inPosition", 	AttrFormat::FLOAT, 3},
+				{"inTexC", 		AttrFormat::FLOAT, 2},
+				{"inNormal",	AttrFormat::FLOAT, 3}
+			};
+
+			m_vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+			if(m_vertexFmtID == 0)
+			{
+				Print("Couldn't load vertex format");
+			}
+		}
+
+		// Get model
+		{
+			@m_modelData = getOwner().getModelManager().getModelData(m_modelParam);
+			m_modelData.get_vertexBufferID(0);
+		}
+
+		// Texture
+		{
+			m_textureID = 1;//getOwner().getRenderer().addTexture(m_textureParam);
+
+			if(m_textureID == 0)
+			{
+				Print("Couldn't load texture!");
+			}
+		}	
+	}
+
+
+
+	private void onRender() override
+	{
+		Renderer 				 @renderer 	= getOwner().getRenderer();
+		const CameraComponent	 @camera   	= getOwner().getCameraManager().getCurrentCamera();
+		TransformComponent @transform = getOwner().getComponent("Transform");
+
+		const Math::Vec3 scaleObj = {0.25f, 0.25f, 0.25f};
+		transform.setScale(scaleObj);
+
+		const Math::Mat4 world = transform.getWorldMatrix();
+		const Math::Vec2 scale = {5, 5};
+
+		if(renderer !is null && camera !is null)
+		{
+			renderer.reset();
+			renderer.setShader(m_shaderID);
+			renderer.setVertexFormat(m_vertexFmtID);
+			renderer.setVertexBuffer(m_modelData.get_vertexBufferID(0));
+			renderer.setIndexBuffer(m_modelData.get_indexBufferID(0));
+
+			renderer.setTexture("diffuseTex", m_textureID);
+			renderer.setShader2f("texScale", scale);
+			renderer.setShaderMatrix44f("worldMat", world);
+			renderer.setShaderMatrix44f("viewMat", camera.getViewMatrix());
+			renderer.setShaderMatrix44f("projMat", camera.getProjMatrix());
+
+			renderer.apply();
+
+			//renderer.drawArray(Primitive::TRIANGLES, 0, m_modelData.getModel().getMesh(0).getGLFaces());
+		}
+		else
+		{
+			Print("Failed to get renderer or camera");
+		}		
+	}
+
+
+
+	// ** Member Vars ** //
+
+	private uint 		m_shaderID 			= 0;
+	private uint 		m_vertexFmtID 		= 0;
+	private uint 		m_vertexBufferID 	= 0;
+	private uint 		m_textureID 		= 0;
+	private ModelData   @m_modelData;
+
+	private string 		m_shaderParam 		= "FullBright.shd";
+	private string 		m_textureParam 		= "dev_grid_green.png";
+	private string 		m_modelParam 		= "ship01.obj";	
+
+};

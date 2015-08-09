@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity>
+	
+	<name>RotateChildren</name>
+	<tags>cube rotate</tags>
+
+	<components>
+
+		<!-- Transform and Physics -->
+
+		<component>
+			<name>Transform</name>
+			<params>
+				<scale>2 2 2</scale>
+				<position>0 0 0</position>
+			</params>
+		</component>
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>cube.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>FullbrightMaterial</name>
+			<params>
+				<diffuse_map>dev_grid_orange.png</diffuse_map>
+				<diffuse_map_scale>1 1</diffuse_map_scale>
+			</params>
+		</component>
+
+		<component>
+			<name>RotateChildObjectTest</name>
+			<params>
+				<child_to_rotate_name>Child01</child_to_rotate_name>
+			</params>
+		</component>
+
+	</components>
+
+	<children>
+
+		<entity>
+
+			<name>Child01</name>
+			<tags>cube rotate</tags>
+
+			<components>
+
+				<component>
+					<name>Transform</name>
+					<params>
+						<scale>1 1 1</scale>
+						<position>5 0 0</position>
+					</params>
+				</component>
+
+				<component>
+					<name>Model</name>
+					<params>
+						<model_name>cube.obj</model_name>
+					</params>
+				</component>
+
+				<component>
+					<name>FullbrightMaterial</name>
+					<params>
+						<diffuse_map>dev_grid_orange.png</diffuse_map>
+						<diffuse_map_scale>1 1</diffuse_map_scale>
+					</params>
+				</component>
+
+			</components>
+		</entity>
+
+	</children>
+		
+</entity>

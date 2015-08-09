@@ -1,0 +1,69 @@
+/*
+	PlayerModel.as
+*/
+
+//[RegisteredEvents ["PlayerMoved", "PlayerJumped", "PlayerDied", "PlayerSpawned"]]
+class PlayerModel : GameComponent
+{
+	uint shaderID;
+	uint vertexFmtID;
+
+	PlayerModel()
+	{
+		shaderID 	= 0;
+		vertexFmtID = 0;
+	}
+
+	void onStart()
+	{
+		Print("Player OnStart");
+
+		if(getOwner() !is null)
+		{
+			shaderID = getOwner().getRenderer().addShader("ForwardLighting.shd");
+			if(shaderID == 0)
+			{
+				Print("Couldn't load shader");
+			}
+
+			FormatDesc foo = {"inPosition", AttrFormat::FLOAT, 3};
+
+			Print(foo.attrName);
+
+			FormatDesc boo(foo);
+
+			array<FormatDesc> bar(3);
+			bar[0] = foo;
+			FormatDesc barz = foo;
+
+			array<FormatDesc> vertFmt = {
+				{"inPosition", 	AttrFormat::FLOAT, 3},
+				{"inTexC", 		AttrFormat::FLOAT, 2},
+				{"inNormal", 	AttrFormat::FLOAT, 3}
+			};
+
+			
+
+			vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+			if(vertexFmtID == 0)
+			{
+				Print("Couldn't load vertex format");
+			}
+			else
+			{
+				Print("Got Vertex Fmt");
+				Print(vertexFmtID);
+			}
+		}
+		else
+		{
+			Print("Error: No Owner!");
+		}
+	}
+	
+	void onThink(const float dt)
+	{
+		Print("On Think");
+	}
+};

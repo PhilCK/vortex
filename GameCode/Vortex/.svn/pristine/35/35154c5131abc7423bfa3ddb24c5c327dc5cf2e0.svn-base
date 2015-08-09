@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Level -->
+
+<entity>
+	
+	<name>Level</name>
+	<tags>level</tags>
+
+	<components>
+		
+		<!-- Transform -->
+		
+		<component>
+			<name>Transform</name>
+			<params>
+				<position>0 0 9</position>
+			</params>
+		</component>
+
+		<component>
+			<name>Model</name>
+			<params>
+				<model_name>level_ring.obj</model_name>
+			</params>
+		</component>
+
+		<component>
+			<name>BlinnPhongMaterial</name>
+			<params>
+				<rgba>1 1 0 1</rgba>
+				<diffuse_map>dev_grid_blue.png</diffuse_map>
+			</params>
+		</component>
+
+	</components>
+		
+</entity>

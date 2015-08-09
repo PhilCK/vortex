@@ -1,0 +1,16 @@
+#
+#	Free Camera Description
+#	A debug camera that lets you fly through the world.
+#
+entity:
+	name: FreeCamera
+	tags: debug camera
+
+	components:
+		- name: Transform
+		- name: Camera
+		- name: FreeCameraController
+			params:
+				movement_speed: 40
+				sprint_multiplier: 4
+				rotation_speed: 0.25

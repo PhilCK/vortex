@@ -1,0 +1,6 @@
+
+class PowerPlantModel : GameComponent
+{
+
+
+}; // class

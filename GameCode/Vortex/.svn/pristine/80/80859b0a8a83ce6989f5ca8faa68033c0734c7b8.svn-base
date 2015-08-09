@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EnemyShip -->
+
+<entity>
+	
+	<name>EnemyShip</name>
+	<tags>enemy ship</tags>
+
+	<components>
+		
+		<!-- Transform and Physics -->
+		
+		<component>
+			<name>VortexTransform</name>
+		</component>
+		
+		<component>
+			<name>VortexPhysics</name>
+		</component>
+
+		<component>
+			<name>Collider</name>
+			<params>
+				<type>
+					<name>Cube</name>
+					<extents>0.25</extents>
+				</type>
+			</params>
+		</component>			
+		
+		<!-- MVC -->
+		
+		<component>
+			<name>ShipModel</name>
+			<params>
+				<max_health>10</max_health>
+				<current_health>10</current_health>
+				<speed>10</speed>
+			</params>
+		</component>
+		
+		<component>
+			<name>ShipView</name>
+			<params>
+				<model>PLAYER</model>
+				<texture_name>dev_grid_red.png</texture_name>
+			</params>
+		</component>
+		
+		<component>
+			<name>ShipEnemyController</name>
+			<params>
+				<take_damage_from_tags>bullets enemy_ships</take_damage_from_tags>
+				<move_left_on>gamepad_control_left</move_left_on>
+				<move_right_on>gamepad_control_right</move_right_on>
+				<fire_on>gamepad_control_fire</fire_on>
+				<jump_on>gamepad_control_jump</jump_on>
+				<action_on>gamepad_control_action</action_on>
+			</params>
+		</component>
+
+		<!-- Others -->
+
+		<component>
+			<name>WeaponSystem</name>
+			<params>
+				<default>plasma</default>
+				<collide_with_tags>powerup</collide_with_tags>
+				<change_on>COLLISION</change_on>
+				<change_to>RANDOM</change_to> <!-- ARG -->
+			</params>
+		</component>
+
+		<component>
+			<name>PowerUpSystem</name>
+		</component>
+
+	</components>
+		
+</entity>

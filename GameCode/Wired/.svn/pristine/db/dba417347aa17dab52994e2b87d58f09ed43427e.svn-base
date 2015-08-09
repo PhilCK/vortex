@@ -1,0 +1,174 @@
+/*
+	GroundView
+	--
+	Displays the ground.
+*/
+
+class GroundView : GameComponent
+{
+	GroundView()
+	{
+		shaderID 	 = 0;
+		vertexFmtID  = 0;
+		vertexBuffID = 0;
+
+		m_shaderName  = "FullBright.shd";
+		m_textureName = "dev_orange_grid.png";
+	}
+
+
+
+	void onParams(const Param &in params)
+	{
+		m_shaderName  = params["shader_name"].asString(m_shaderName);
+		m_textureName = params["texture_name"].asString(m_textureName);
+	}
+
+
+
+	void onStart()
+	{
+		Print("Ground OnStart");
+
+		Print(getOwner().getWindow().getTitle());
+
+		if(getOwner() !is null)
+		{
+			// Add missing components
+			{
+				//getOwner().addComponent("Transform");
+				//getOwner().addComponent("Rigidbody");
+
+				StaticPlaneCollider collider(0.f, 1.f, 0.f, 0.05f);
+
+				//PhysicsComponent @physComponent = cast<PhysicsComponent@>(getOwner().getComponent("Rigidbody"));
+				PhysicsComponent @physComponent = getOwner().getComponent("Rigidbody");
+
+				if(physComponent !is null)
+				{
+					Print("Got rigidbody");
+					physComponent.setMass(0);
+					//physComponent.setColliderShape(collider);
+				}
+				else
+				{
+					Print("Can't find rigidbody");
+				}
+			}
+
+			// Load Shader
+			{
+				shaderID = getOwner().getRenderer().addShader(m_shaderName);
+
+				if(shaderID == 0)
+				{
+					Print("Couldn't load shader");
+				}
+			}
+
+			// Load Vert fmt
+			{
+				array<FormatDesc> vertFmt = {
+					{"inPosition", 	AttrFormat::FLOAT, 3},
+					{"inTexC", 		AttrFormat::FLOAT, 2},
+					{"inNormal",	AttrFormat::FLOAT, 3}
+				};
+
+				vertexFmtID = getOwner().getRenderer().addVertexFormat(vertFmt);
+
+				if(vertexFmtID == 0)
+				{
+					Print("Couldn't load vertex format");
+				}
+			}
+
+			// Verts
+			{
+				array<float> verts = {
+					-10.0f,  0.f, -10.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+					 10.0f,  0.f, -10.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+					 10.0f, 0.f, 10.0f,   1.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+
+					-10.0f,  0.f, -10.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+					 10.0f, 0.f, 10.0f, 	1.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+					-10.0f, 0.f, 10.0f, 	0.0f, 1.0f, 0.0f, 1.0f, 0.0f					
+				};
+
+				vertexBuffID = getOwner().getRenderer().addVertexBuffer(verts);
+
+				if(vertexBuffID == 0)
+				{
+					Print("Couldn't load vertices!");
+				}
+			}
+
+			// Texture
+			{
+				textureID = getOwner().getRenderer().addTexture(m_textureName);
+
+				if(textureID == 0)
+				{
+					Print("Couldn't load texture!");
+				}
+			}
+
+		}
+		else
+		{
+			Print("Error: No Owner!");
+		}
+	}
+
+
+
+	void onRender()
+	{
+		Print("On Render Ground");
+
+		getOwner().getEventManager().sendInstantEvent(123, 1.5f);
+
+		Renderer 		@renderer = getOwner().getRenderer();
+		CameraComponent @camera   = getOwner().getCameraManager().getCurrentCamera();
+
+		//renderer.setClearColor(1, 0, 0, 1);
+
+		Mat4 world = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1};
+		Vec2 scale = {5, 5};
+
+		if(renderer !is null && camera !is null)
+		{
+			renderer.reset();
+			renderer.setShader(shaderID);
+			renderer.setVertexFormat(vertexFmtID);
+			renderer.setVertexBuffer(vertexBuffID);
+
+			renderer.setTexture("diffuseTex", textureID);
+			renderer.setShader2f("texScale", scale);
+			renderer.setShaderMatrix44f("worldMat", world);
+			renderer.setShaderMatrix44f("viewMat", camera.getViewMatrix());
+			renderer.setShaderMatrix44f("projMat", camera.getProjMatrix());
+
+			renderer.apply();
+
+			renderer.drawArray(Primitive::TRIANGLES, 0, 6);
+		}
+		else
+		{
+			Print("Failed to get renderer or camera");
+		}
+	}
+
+	
+
+	// ** MEMBER VARS ** //
+
+	private uint 		shaderID;
+	private uint 		vertexFmtID;
+	private uint 		vertexBuffID;
+	private uint 		textureID;
+
+	private string 		m_shaderName;
+	private string 		m_textureName;
+
+
+};

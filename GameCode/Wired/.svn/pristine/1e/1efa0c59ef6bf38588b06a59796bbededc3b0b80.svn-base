@@ -1,0 +1,105 @@
+/*
+
+*/
+
+class PlayerController : GameComponent
+{
+
+	PlayerModel @m_model;
+
+	void onStart()
+	{
+		Print("PLAYER MODEL");
+
+		// Find Model
+		//PlayerModel @model = cast<PlayerModel>(getOwner().getComponent("PlayerModel"));
+		PlayerModel @model = getOwner().getComponent("PlayerModel");
+
+		if(model is null)
+		{
+			Print("Couldn't find PlayerModel");
+		}
+		else
+		{
+			Print("Found something!");
+			model.test();
+		}
+	}
+
+
+	void onEarlyThink(const float dt)
+	{
+		if(getOwner() !is null)
+		{
+			Input 				@input 	   = getOwner().getInput();
+			TransformComponent 	@transform = getOwner().getComponent("Transform");
+			PhysicsComponent 	@rigidbody = getOwner().getComponent("Rigidbody");
+
+			if(input !is null && transform !is null && rigidbody !is null)
+			{
+				// Jump
+				{
+					if(input.isDown(Key::KB_SPACE))
+					{
+						Vec3 jumpDir = {0.0f, 100.0f, 0.0f};
+						rigidbody.applyForce(jumpDir);
+					}
+				}
+
+				// Rotate
+				{
+					Vec3 rot = {0.0f, 0.0f, 0.0f};
+					rot.y = (input.getMouseDeltaX() * 10.0f) * dt;
+
+					if(rot.y != 0.0f)
+					{
+						rigidbody.applyTorque(rot);
+					}
+				}
+
+				// Movement
+				{
+					Vec3 posMove = {0.0f, 0.0f, 0.0f};
+
+					if(input.isDown(Key::KB_W))
+					{
+						posMove.z += 1000.0f * dt;
+					}
+
+					if(input.isDown(Key::KB_S))
+					{
+						posMove.z -= 1000.0f * dt;
+					}
+
+					rigidbody.applyLocalForce(posMove);
+				}
+			}
+			else
+			{
+				Print("PlayerController: Missing component(s).");
+			}
+		}
+	}
+
+
+	//[OnEvent ["InputControllerDirection"]]
+	void playerMove()
+	{
+
+	}
+
+
+	//[OnEvent ["InputControllerRotation"]]
+	void playerLook()
+	{
+
+	}
+
+
+	//[OnEvent ["InputControllerJump"]]
+	void playerJump()
+	{
+
+	}
+
+};

@@ -1,0 +1,804 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Scale",
+				"ScaleObjectTestState"
+			],
+			[
+				"DIV",
+				"DIVIDED"
+			],
+			[
+				"VortexSpawnPO",
+				"VortexSpawnPositionState"
+			],
+			[
+				"Enem",
+				"EnemySplitterStates"
+			],
+			[
+				"SP",
+				"SPAWNED"
+			],
+			[
+				"Vortex",
+				"VortexSpawnPositionState"
+			],
+			[
+				"SPAWN",
+				"SPAWNED"
+			],
+			[
+				"Vorte",
+				"VortexSpawnPosition"
+			],
+			[
+				"m_ce",
+				"m_cellDivideTimeParam"
+			],
+			[
+				"getEvent",
+				"getEventManager"
+			],
+			[
+				"SPW",
+				"SPAWNED"
+			],
+			[
+				"VO",
+				"VortexSpawnPositionState"
+			],
+			[
+				"m_coll",
+				"m_collideWithTagParam"
+			],
+			[
+				"Spl",
+				"SPLITTING"
+			],
+			[
+				"CellD",
+				"CellDivideState"
+			],
+			[
+				"moveEvent",
+				"moveEventName"
+			],
+			[
+				"m_vor",
+				"m_vortexDepthParam"
+			],
+			[
+				"m_",
+				"m_vortexDepthParam"
+			],
+			[
+				"m_vortex",
+				"m_vortexAngleParam"
+			],
+			[
+				"chai",
+				"chaiscript"
+			],
+			[
+				"ra",
+				"itRange"
+			],
+			[
+				"Even",
+				"EventArg"
+			],
+			[
+				"Event",
+				"EventArgSetup"
+			],
+			[
+				"Ev",
+				"EventArgSetup"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"uint",
+				"uint32_t"
+			],
+			[
+				"un",
+				"uint16_t"
+			],
+			[
+				"Active",
+				"ActiveDirecotyrFilemanager"
+			],
+			[
+				"g",
+				"getNextParam"
+			],
+			[
+				"uniCharc",
+				"uniCharacterSize"
+			],
+			[
+				"uniFon",
+				"uniFontMap"
+			],
+			[
+				"Geneat",
+				"GeneratedPersonalInfo"
+			],
+			[
+				"ASS",
+				"ASSERT_IS_NOT_EQUAL"
+			],
+			[
+				"ASSER",
+				"ASSERT_IS_NOT_EQUAL"
+			],
+			[
+				"asUIn",
+				"asUInt32"
+			],
+			[
+				"asU",
+				"asUInt16"
+			],
+			[
+				"m_c",
+				"m_currentSize"
+			],
+			[
+				"cha",
+				"character"
+			],
+			[
+				"token",
+				"tokenType"
+			],
+			[
+				"not",
+				"not_eq"
+			],
+			[
+				"e",
+				"export"
+			],
+			[
+				"d",
+				"do	Do While Loop"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"al",
+				"alignof"
+			],
+			[
+				"connect",
+				"connectToIp"
+			],
+			[
+				"Entity",
+				"EntityPtr"
+			],
+			[
+				"Use",
+				"USE_MATH_FALLBACK"
+			],
+			[
+				"test",
+				"testVal4"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Entities/ground.xml",
+			"settings":
+			{
+				"buffer_size": 796,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Entities/camera.xml",
+			"settings":
+			{
+				"buffer_size": 265,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Entities/phy_scale_cube.xml",
+			"settings":
+			{
+				"buffer_size": 950,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "States/main_state.xml",
+			"settings":
+			{
+				"buffer_size": 765,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Code/ScaleObjectTest.as",
+			"settings":
+			{
+				"buffer_size": 915,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/Caffeine.sublime-build",
+	"command_palette":
+	{
+		"height": 347.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/EnemyBullet.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/DeltaTime.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/Hooks.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ShipEnemyController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/GameController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/CollisionDetection.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/CellDivide.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ProjectileModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ProjectileController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ShipModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/GameModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/VortexTransform.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Settings.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/Bullet.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/Level.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/VortexSpawnPosition.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/EnemySplitterController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/Splitter.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Docs/GeneralDesign.md",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/WeaponSystem.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/LevelViewRing.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/VortexRandomSpawn.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/LevelView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ProjectileView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ShipView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/Player.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/Code/Caffeine/Base/AssetManagerBase.hpp",
+		"/Users/PhilCK/Developer/lib-caffeine/AppAssets/Shaders/FullBright.shd",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/GameController.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/CameraGameController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/CameraGameModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/States/MainState.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/States/GameModeStaging.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/MainState.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/States/GameModeStageing.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/States/TestGame.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/PlayerView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/PlayerController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/GroundModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/FreeCamera.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/PowerPlantModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/PowerPlantView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/LevelModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/LevelController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/ShipPlayerController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/GameManagers.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/GameCamera.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/VortexPhysics.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/PowerUpSystem.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/untitled",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Entities/Projectile.xml",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/GUIPlayerController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/GUIPlayerModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/GUIPlayerView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Vortex/Code/GUITransform.as",
+		"/Users/PhilCK/Developer/script-tests/TestClasses.cpp",
+		"/Users/PhilCK/Developer/script-tests/Main.cpp",
+		"/Users/PhilCK/Developer/script-tests/ChaiGlue.hpp",
+		"/Users/PhilCK/Developer/script-tests/TestClasses.hpp",
+		"/Users/PhilCK/Developer/script-tests/chai_object.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/boxed_cast_test.cpp",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/var_ref_decl.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/var_decl.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/use.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/type_info.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/object_attr_same_name.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/object_attr.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/object_clone.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/object_constructor_guards.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/unittests/object_method_guards.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/callbacks.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/eval.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/for.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/fun.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/hello.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/if.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/lambda.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/loop_break.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/oper.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/range.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/scope.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/vector.chai",
+		"/Users/PhilCK/Desktop/ChaiScript-master/samples/while.chai",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/untitled.yaml",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/FreeCamera.as",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/PlayerView.as",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/PlayerController.as",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/MainState.as",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/GroundModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/PlayerModel.as",
+		"/Users/PhilCK/Developer/lib-caffeine/Code/Caffeine/Tests/Rakefile",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/GameCode/Wired/Code/GroundView.as",
+		"/Users/PhilCK/Desktop/foo.cpp",
+		"/Users/PhilCK/Developer/lib-caffeine/Docs/ASCodeStandards.md",
+		"/Users/PhilCK/Developer/lib-caffeine/Docs/CodeStandards.md",
+		"/Users/PhilCK/Developer/lib-caffeine/Bin/Debug/Caffeine.app/Contents/Resources/AppAssets/Shaders/FullBright.shd",
+		"/Users/PhilCK/Desktop/sdk/add_on/scriptmath/scriptmathcomplex.cpp",
+		"/Users/PhilCK/Developer/lib-caffeine/GameCode/Wired/Code/GroundView.as",
+		"/Users/PhilCK/Developer/Flanders/Assets/Docs/CreditList.txt",
+		"/Users/PhilCK/Desktop/EventArg.cpp",
+		"/Users/PhilCK/rakefile",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Utilities/XMLHelpers.cpp",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Utilities/AnyData.hpp",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Utilities/AnyData.cpp",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Utilities/ParamNode.hpp",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Utilities/ParamNode.cpp",
+		"/Users/PhilCK/Desktop/Data.cpp",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Utilities/XMLHelpers.hpp",
+		"/Users/PhilCK/Developer/Caffeine/Code/Caffeine/Systems/TextRenderer.cpp",
+		"/Users/PhilCK/.Rake/rakefile",
+		"/Users/PhilCK/Developer/Caffeine/Rakefile",
+		"/Users/PhilCK/Desktop/sdk/samples/game/source/main.cpp",
+		"/Users/PhilCK/Developer/ASTest/build/Debug/script.as",
+		"/Users/PhilCK/Downloads/sdk/samples/tutorial/bin/script.as",
+		"/Users/PhilCK/Developer/reaper-squadron/Assets/Shaders/Bullet.shd",
+		"/Users/PhilCK/Developer/terminal/Bin/Debug/Caffeine.app/Contents/Resources/Assets/Shaders/Text.shd",
+		"/Users/PhilCK/Developer/terminal/Assets/Textures/PixelFont.xml",
+		"/Users/PhilCK/Developer/terminal/Assets/Shaders/Text.shd",
+		"/Users/PhilCK/Developer/terminal/Assets/Shaders/FullBright.shd",
+		"/Users/PhilCK/Developer/terminal/Assets/Shaders/ForwardLighting.shd",
+		"/Users/PhilCK/Developer/terminal/Assets/Shaders/Debug.shd",
+		"/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/AnyDataTest.cpp",
+		"/Users/PhilCK/Developer/terminal/Assets/Entities/HideOutOne.xml",
+		"/Users/PhilCK/Developer/terminal/Assets/Models/subway.xml",
+		"/Users/PhilCK/Developer/terminal/Code/Caffeine/Tests/Rakefile",
+		"/Users/PhilCK/Developer/terminal/Code/Application/Tests/Rakefile",
+		"/Users/PhilCK/Developer/terminal/Code/Application/Tests/GeneratorsTest.cpp",
+		"/Users/PhilCK/Developer/terminal/Docs/Readme.md"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"m_scaleParam",
+			"pushNewEntity",
+			"range",
+			"scale",
+			"Pi",
+			"Pi()",
+			"MoveArgs",
+			"var",
+			"make ",
+			"curly",
+			"3",
+			"getNode",
+			"pair",
+			"sendEvent",
+			"sendE",
+			"float",
+			"ComplexCopyConstructor",
+			"ExecuteCall",
+			"GetControllerScript",
+			"SController",
+			"contexts",
+			"ReturnContextToPool",
+			"controller",
+			"controller =",
+			"controller=",
+			"controller",
+			"Icontroller",
+			"type = ",
+			"ctrl",
+			"IController",
+			"uniFontScale",
+			"std::cout ",
+			"LUAGLUE_H_GUARD",
+			"LuaGlue::getGlobal",
+			"getGlobal",
+			"setRenderTarget",
+			"vao",
+			"fbo",
+			"glBindFramebuffer",
+			"ALL",
+			"MAKE",
+			"osx",
+			"lib",
+			"osX",
+			"OSX",
+			"BUILD_AS",
+			"Caffeine/Caffeine",
+			"infoplist.strings",
+			"Caffeine/Caffeine",
+			"setRenderTarget(",
+			"setRenderTarget",
+			"setupSampler",
+			"addRenderTarget",
+			"frameBuffer",
+			"lerp",
+			"general",
+			"= 0",
+			"=0",
+			"m_vehicle",
+			"applyEngineForce",
+			"apply",
+			"torque",
+			"<<<",
+			"o ",
+			"apply",
+			"MAX_TEXTUREUNIT",
+			"selectedTextures",
+			"UNIFORM_MAT_FUNC",
+			"constantTypeSizes",
+			"FORMAT",
+			"FORMAT\nFORMAT",
+			"setTexture",
+			"vertexFormat",
+			"vertexsize",
+			"half\nhalf",
+			"getFormatSize",
+			"addVertexForm",
+			"glGetAttribLocation",
+			"vertexFormat",
+			"addVertexF",
+			"glGetAttribLocation",
+			"addVertexF",
+			"Image",
+			" Image",
+			" Image ",
+			" Image",
+			"image",
+			"texture",
+			"glBindBuffer",
+			"GL_DEPTH_TEST",
+			"addVertexf",
+			"formatDesc",
+			"vertexformat",
+			"drawArray",
+			"draw",
+			"indexBuffer",
+			"addIndexBuffer",
+			"indexBuffer",
+			"cvf",
+			"vertexformat",
+			"glVertexAttribPointer",
+			"shader",
+			"location",
+			"glBindBuffer",
+			"drawArray",
+			"static",
+			"glBindVertexArray",
+			"vao",
+			"glBindVertexArray",
+			"glEnableVertexAttribArray",
+			"glBindBuffer",
+			"selectedVertexBuffers",
+			"selectedVertexBuffers\nselectedVertexBuffers\nselectedVertexBuffers",
+			"selectedVertexBuffers\nselectedVertexBuffers",
+			"setVertexBuffer",
+			"DrawElements",
+			"glEnableClientState",
+			"drawArrays",
+			"glDrawArrays",
+			"vertexBuffers",
+			"drawArrays",
+			"drawArrays\n\ndrawArrays",
+			"apply",
+			"apply		",
+			"\napply()",
+			"\n\n\napply()",
+			"apply()",
+			"apply"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Entities/ground.xml",
+					"settings":
+					{
+						"buffer_size": 796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								422,
+								422
+							]
+						],
+						"settings":
+						{
+							"enable_checkbounce_grammar": false,
+							"enable_checkbounce_spelling": true,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Entities/camera.xml",
+					"settings":
+					{
+						"buffer_size": 265,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"enable_checkbounce_grammar": false,
+							"enable_checkbounce_spelling": true,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Entities/phy_scale_cube.xml",
+					"settings":
+					{
+						"buffer_size": 950,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"enable_checkbounce_grammar": false,
+							"enable_checkbounce_spelling": true,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 43.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "States/main_state.xml",
+					"settings":
+					{
+						"buffer_size": 765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								191
+							]
+						],
+						"settings":
+						{
+							"enable_checkbounce_grammar": false,
+							"enable_checkbounce_spelling": true,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Code/ScaleObjectTest.as",
+					"settings":
+					{
+						"buffer_size": 915,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
+							]
+						],
+						"settings":
+						{
+							"enable_checkbounce_grammar": false,
+							"enable_checkbounce_spelling": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 59.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.490634005764,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 167.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 203.0,
+	"status_bar_visible": true
+}

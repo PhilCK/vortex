@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Free Camera is a test flythrough camera -->
+
+<entity>
+	
+	<name>FreeCamera</name>
+	<tags>camera debug</tags>
+
+	<components>
+
+		<component>
+			<name>Transform</name>
+		</component>
+
+		<component>
+			<name>Camera</name>
+		</component>
+
+		<component>
+			<name>FreeCameraController</name>
+			<params>
+				<move_speed>40</move_speed>
+				<sprint_multiplier>4</sprint_multiplier>
+				<rotation_speed>0.25</rotation_speed>
+			</params>
+		</component>
+
+	<components>
+
+</entity>
